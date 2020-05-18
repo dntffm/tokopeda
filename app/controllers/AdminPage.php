@@ -28,10 +28,11 @@ class AdminPage extends Controller{
                             
            }
         } else{
+            $_SESSION["loginfail"] = true;
             header("Location: ".BASE_URL."/AdminPage/login");
-            exit;
+            
         }
-        die();
+        
     }
 
     public function LaporanPenjualan(){

@@ -47,13 +47,32 @@
                                             </button>
                                             <div class="main-menu">
                                                 <nav>
-                                                    <ul>
-                                                        <li><a href="<?=BASE_URL;?>">Beranda</a></li>
-                                                        <li class="active"><a href="<?=BASE_URL?>/tentang">Tentang Kami </a></li>
-                                                        <li><a href="<?=BASE_URL?>/produk">Produk</a></li>
-                                                        <li><a href="<?=BASE_URL?>/login">Login</a></li>
-                                                        
-                                                    </ul>
+                                                    <?php
+                                                        if(isset($_SESSION["isauth"])){
+                                                            if($_SESSION["isauth"] == true){?>
+                                                            <ul>
+                                                                <li><a href="<?=BASE_URL;?>">Beranda</a></li>
+                                                                <li class="active"><a href="<?=BASE_URL?>/tentang">Tentang Kami </a></li>
+                                                                <li><a href="<?=BASE_URL?>/produk">Produk</a></li>
+                                                                <li><a href="<?=BASE_URL?>/signup/logout">Logout</a></li>
+                                                                
+                                                            </ul>
+                                                    <?php
+                                                        }
+                                                    }   
+                                                        else{
+                                                    ?>
+                                                            <ul>
+                                                                <li><a href="<?=BASE_URL;?>">Beranda</a></li>
+                                                                <li class="active"><a href="<?=BASE_URL?>/tentang">Tentang Kami </a></li>
+                                                                <li><a href="<?=BASE_URL?>/produk">Produk</a></li>
+                                                                <li><a href="<?=BASE_URL?>/signup">Login</a></li>
+                                                                
+                                                            </ul>
+                                                    <?php
+                                                        }
+                                                    ?>
+                                                  
                                                 </nav>
                                             </div>
                                         </div>
@@ -67,9 +86,6 @@
                                         <div class="shopping-cart-content">
                                             <ul>
                                                 <li class="single-shopping-cart">
-                                                    <div class="shopping-cart-img">
-                                                        <a href="#"><img alt="" src="<?=BASE_URL?>/assets/img/cart/cart-1.jpg"></a>
-                                                    </div>
                                                     <div class="shopping-cart-title">
                                                         <h3><a href="#">Gloriori GSX 250 R </a></h3>
                                                         <span>Price: $275</span>

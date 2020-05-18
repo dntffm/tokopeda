@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Login</title>
+  <title>Admin Login</title>
 
   <!-- Custom fonts for this template-->
   <link href="<?=BASE_URL?>/admin-page/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -38,19 +38,29 @@
                 <div class="p-5">
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Hello Kamu</h1>
-                    <?php
-                        if(isset($_GET["login_error"])){
-                            if($_GET["login_error"] == true){
-                                echo '<div class="alert alert-danger" role="alert">
-                                Username atau password Salah !!
-                              </div>';
-                            }
-                        }
-                    ?>
+                    
                   </div>
+                  <?php
+                    if(isset($_SESSION["loginfail"])){
+                      $auth = $_SESSION["loginfail"];
+                      if($auth){
+                        echo '
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                           Username atau Password Salah!!
+                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                           <span aria-hidden="true">&times;</span>
+                         </button>
+                        </div>
+                        ';
+  
+                        session_destroy();
+                      }
+                    }
+                    
+                  ?>
                   <form action="<?=BASE_URL?>/AdminPage/userAuth" method="POST" class="user">
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="username" name="username" placeholder="Masukkan Username">
+                      <input type="text" class="form-control form-control-user" id="username" name="username" placeholder="Masukkan Username" autocomplete="off">
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
@@ -66,7 +76,7 @@
                     </button>
                     <hr>
                   </form>
-                  <hr>
+                  
                   <div class="text-center">
                     <a class="small" href="forgot-password.html">Lupa Password</a>
                   </div>
