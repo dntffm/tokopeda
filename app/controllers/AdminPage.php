@@ -7,6 +7,33 @@ class AdminPage extends Controller{
         $this->view("templates/admin-footer");
     }
 
+    public function login(){
+        $this->view("admin-page/login");
+    }
+
+    public function logout(){
+        session_destroy();
+        
+        header("Location: ".BASE_URL."/AdminPage/login");
+        exit;
+    }
+    public function userAuth(){
+        $data = $this->model("Login_model")->getUser($_POST["username"]);
+        if(password_verify($_POST["password"],$data["password"])){
+           if($data["role"] == "admin"){
+               $_SESSION["role"] = "admin";
+               $_SESSION["username"] = $data["username"];
+               header("Location: ".BASE_URL."/AdminPage");
+               
+                            
+           }
+        } else{
+            header("Location: ".BASE_URL."/AdminPage/login");
+            exit;
+        }
+        die();
+    }
+
     public function LaporanPenjualan(){
         $this->view("templates/admin-header");
         $this->view("admin-page/laporanJual");

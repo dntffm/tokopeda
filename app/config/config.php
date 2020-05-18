@@ -1,6 +1,6 @@
 <?php
 
-define("BASE_URL","http://localhost/UAS-ECOMMERCE/public");
+define("BASE_URL","http://localhost/tokopeda/public");
 define("DB_HOST","localhost");
 define("DB_USERNAME","root");
 define("DB_PASSWORD","");   
