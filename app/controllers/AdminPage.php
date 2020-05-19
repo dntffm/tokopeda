@@ -58,6 +58,13 @@ class AdminPage extends Controller{
         $this->view("templates/admin-footer");
     }
 
+    public function ubah(){
+        if($this->model("Produk_model")->ubahProduk($_POST) > 0){
+            header("Location: ".BASE_URL."/AdminPage/edit");
+                exit;
+        }
+    }
+
     public function tambah(){
         
         if(isset($_POST["submit"])){

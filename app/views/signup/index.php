@@ -42,6 +42,21 @@
                           session_destroy();
                         }
                       }
+
+                      if(isset($_SESSION["signfirst"])){
+                          echo '
+                          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                             Login Dulu Untuk Lanjut. Tidak punya akun ? klik daftar diatas
+                        
+                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                             <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          ';
+    
+                          session_destroy();
+                        
+                      }
                     
                   ?>
                     <div class="tab-content">

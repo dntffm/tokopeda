@@ -1,3 +1,4 @@
+
  <!-- Begin Page Content -->
  <div class="container-fluid">
 
@@ -13,7 +14,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-5">
-                        <form action="">
+                        <form action="<?= BASE_URL ?>/AdminPage/ubah" method="POST"> 
+                            <input type="hidden" name="id" value="<?=$data["product"]["product_id"]?>">
                             <div class="form-group">
                                 <label for="nama-produk">Nama Produk</label>
                                 <input type="text" class="form-control" id="nama-produk" name="nama-produk" value="<?=$data["product"]["product_name"]?>" required>
@@ -27,15 +29,19 @@
                                 <input type="text" class="form-control" id="brand-produk" name="brand-produk" value="<?=$data["product"]["product_brand"]?>" required>
                             </div>
                             <div class="form-group">
+                                <label for="stock">Stok Barang</label>
+                                <input type="text" class="form-control" id="stock" name="stock" value="<?=$data["product"]["stock"]?>" required>
+                            </div>
+                            <div class="form-group">
                                 <label for="jenis-produk">Jenis Produk</label>
-                                <select class="form-control" id="jenis-produk" required>
+                                <select class="form-control" id="jenis-produk" name="jenis-produk" required>
                                     <option value="sepeda">sepeda</option>
                                     <option value="asesoris">asesoris</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="status">Status</label>
-                                <select class="form-control" id="status" required>
+                                <select class="form-control" name="status" id="status" required>
                                     <option value="ready">ready</option>
                                     <option value="habis">habis</option>
                                 </select>
@@ -51,7 +57,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="deskripsi">Deskripsi Produk</label>
-                                <textarea class="form-control" id="deskripsi" rows="3" style="text-align:left">
+                                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" style="text-align:left">
                                     <?=$data["product"]["description"]?>
                                 </textarea>
                             </div>

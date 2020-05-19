@@ -162,7 +162,7 @@
                                             </ul>
                                         </div>
                                         <div class="product-action">
-                                            <a href="<?=BASE_URL?>/produk/toCart/<?=$product["product_id"]?>" class="action-plus-2 p-action-none" style="background-color:white;"
+                                            <a href="<?=BASE_URL?>/cart/add/<?=$product["product_id"]?>" class="action-plus-2 p-action-none" style="background-color:white;"
                                                 title="Add To Cart" href="#">
                                                 <i class=" ti-shopping-cart"></i>
                                             </a>

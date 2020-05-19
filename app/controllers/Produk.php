@@ -15,4 +15,5 @@ class Produk extends Controller{
         $this->view("produk/produk_detail",$data);
         $this->view("templates/footer");
     }
+
 }

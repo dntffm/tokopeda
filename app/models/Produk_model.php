@@ -52,7 +52,38 @@ class Produk_model{
         return $this->db->rowCount();
         
     }
+    public function ubahProduk($data){
 
+       
+        $query = "UPDATE product SET
+                    product_name = :product_name,
+                    product_price = :product_price,
+                    stock = :stock,
+                    kind = :kind,
+                    status = :status,
+                    product_brand = :product_brand,
+                    description = :description,
+                    tags = :tags
+                WHERE product_id = :product_id
+                ";
+                
+        
+        $this->db->query($query);
+        $this->db->bind("product_name",$data["nama-produk"]);
+        $this->db->bind("product_price",$data["harga-produk"]);
+        $this->db->bind("stock",$data["stock"]);
+        $this->db->bind("kind",$data["jenis-produk"]);
+        $this->db->bind("status",$data["status"]);
+        $this->db->bind("product_brand",$data["brand-produk"]);
+        $this->db->bind("description",$data["deskripsi"]);
+        $this->db->bind("tags",$data["tag"]);
+        $this->db->bind("product_id",$data["id"]);
+       
+        
+        $this->db->execute();
+      
+        return $this->db->rowCount();
+    }
     public function hapusProduk($id){
         $query = "DELETE FROM product WHERE product_id=:id";
 
