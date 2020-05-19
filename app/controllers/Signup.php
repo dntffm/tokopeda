@@ -31,7 +31,7 @@ class Signup extends Controller{
                 header("Location: ".BASE_URL);
             } else{
                 $_SESSION["isauth"] = false;
-                header("Location: ".BASE_URL."signup");
+                header("Location: ".BASE_URL."/signup");
             }
         }
     }

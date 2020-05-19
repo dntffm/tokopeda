@@ -162,13 +162,9 @@
                                             </ul>
                                         </div>
                                         <div class="product-action">
-                                            <a class="action-plus-2 p-action-none" style="background-color:white;"
+                                            <a href="<?=BASE_URL?>/produk/toCart/<?=$product["product_id"]?>" class="action-plus-2 p-action-none" style="background-color:white;"
                                                 title="Add To Cart" href="#">
                                                 <i class=" ti-shopping-cart"></i>
-                                            </a>
-                                            <a class="action-cart-2" style="background-color:white;" title="Wishlist"
-                                                href="">
-                                                <i class=" ti-heart"></i>
                                             </a>
                                             <a class="action-reload" style="background-color:white;" title="Quick View"
                                                 href="<?=BASE_URL;?>/produk/produk_detail/<?=$product["product_id"]?>">
@@ -177,7 +173,7 @@
                                         </div>
                                         <div class="product-content-wrapper">
                                             <div class="product-title-spreed">
-                                                <h4><a href="product-details.html"><?=$product["product_name"]?></a>
+                                                <h4><a href="<?=BASE_URL;?>/produk/produk_detail/<?=$product["product_id"]?>"><?=$product["product_name"]?></a>
                                                 </h4>
 
                                             </div>
