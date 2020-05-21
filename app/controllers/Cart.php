@@ -17,7 +17,8 @@ class Cart extends Controller{
                     "product_name" => $data["product_name"],
                     "product_price" => $data["product_price"],
                     "stock" => $data["stock"],
-                    "qty" => 1
+                    "qty" => 1,
+                    ""
                 );  
 
                 if(!empty($_SESSION["cart"])){
@@ -36,6 +37,7 @@ class Cart extends Controller{
                     }
                 } else{
                     $_SESSION["cart"][] = $data;
+                    header("Location: ".BASE_URL."/cart");
                 }
                 
                 
@@ -48,5 +50,36 @@ class Cart extends Controller{
             $_SESSION["signfirst"] = "signfirst";
             header("Location: ".BASE_URL."/signup");
         }
+    }
+
+    public function update(){
+        $cart = $_SESSION["cart"];
+       
+        if(isset($_POST["update"])){
+            for($i = 0; $i < count($cart); $i++){
+                $cart[$i]["qty"] = $_POST["qty"][$i];
+            }
+        }
+        $_SESSION["cart"] = $cart;
+        header("Location: ".BASE_URL."/cart");
+    }
+
+    public function delete($id){
+        $cart = $_SESSION["cart"];
+    
+        for($i=0; $i<count($cart); $i++){
+            if($cart[$i]["product_id"] == $id){
+                unset($cart[$i]);
+            }
+        }
+
+        $_SESSION["cart"] = $cart;
+        header("Location: ".BASE_URL."/cart");
+    }
+
+    public function checkout(){
+        $this->view("templates/header");
+        $this->view("cart/checkout");
+        $this->view("templates/footer");
     }
 }
