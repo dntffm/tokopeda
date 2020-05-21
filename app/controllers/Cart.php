@@ -85,7 +85,7 @@ class Cart extends Controller{
     }
 
     public function getKotaByProvId(){
-        $provinsiId = $_POST["prov_id"];
+        $provinsiId = 2;
         $this->model("Rajaongkir")->getKota($provinsiId);
         
     }

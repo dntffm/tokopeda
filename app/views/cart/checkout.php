@@ -36,7 +36,7 @@
                             <div class="col-md-12">
                                 <div class="country-select">
                                     <label>Kota<span class="required">*</span></label>
-                                    <select>
+                                    <select id="kabupaten"> 
                                         
                                     </select>
                                 </div>
@@ -44,7 +44,7 @@
                             <div class="col-md-12">
                                 <div class="country-select">
                                     <label>Kurir<span class="required">*</span></label>
-                                    <select id="kabupaten">
+                                    <select>
                                         
                                     </select>
                                 </div>
