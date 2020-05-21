@@ -14,7 +14,7 @@ class Rajaongkir{
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "GET",
         CURLOPT_HTTPHEADER => array(
-            "8ab0446315ad50db50dfaa6b17fb955f"
+            "key: 70537d44e983cc972969291578a2e70e"
         ),
         ));
 
@@ -26,23 +26,24 @@ class Rajaongkir{
         if ($err) {
         echo "cURL Error #:" . $err;
         } else {
-        echo $response;
+            $prov = json_decode($response,true);
+            return $prov["rajaongkir"]["results"];
         }
     }
     
-    public function getKota(){
+    public function getKota($id){
         $curl = curl_init();
         //kota
         curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://api.rajaongkir.com/starter/city",
+        CURLOPT_URL => "https://api.rajaongkir.com/starter/city?province=$id",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
         CURLOPT_TIMEOUT => 30,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => "GET",
+        CURLOPT_CUSTOMREQUEST => "POST",
         CURLOPT_HTTPHEADER => array(
-            "8ab0446315ad50db50dfaa6b17fb955f"
+            "key: 70537d44e983cc972969291578a2e70e"
         ),
         ));
 
@@ -54,7 +55,11 @@ class Rajaongkir{
         if ($err) {
         echo "cURL Error #:" . $err;
         } else {
-        echo $response;
+                
+            $data = json_decode($response, true);
+            for ($i=0; $i < count($data['rajaongkir']['results']); $i++) { 
+                echo "<option value='".$data['rajaongkir']['results'][$i]['city_id']."'>".$data['rajaongkir']['results'][$i]['city_name']."</option>";
+            }
         }
     }
     
@@ -85,7 +90,7 @@ class Rajaongkir{
         if ($err) {
         echo "cURL Error #:" . $err;
         } else {
-        echo $response;
+        return $response;
         }
     }
     

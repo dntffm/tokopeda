@@ -78,8 +78,15 @@ class Cart extends Controller{
     }
 
     public function checkout(){
+        $data["provinsi"] = $this->model("Rajaongkir")->getProvinsi();
         $this->view("templates/header");
-        $this->view("cart/checkout");
-        $this->view("templates/footer");
+        $this->view("cart/checkout",$data);
+       
+    }
+
+    public function getKotaByProvId(){
+        $provinsiId = $_POST["prov_id"];
+        $this->model("Rajaongkir")->getKota($provinsiId);
+        
     }
 }

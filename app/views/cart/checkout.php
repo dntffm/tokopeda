@@ -14,13 +14,22 @@
                                     <input type="text" placeholder="" />
                                 </div>
                             </div>
-                            
+                            <?php
+                                /* var_dump($data["provinsi"]);  */   
+                            ?>
                             
                             <div class="col-md-12">
                                 <div class="country-select">
                                     <label>Provinsi<span class="required">*</span></label>
-                                    <select>
-                                        
+                                    <select id="provinsi" name="provinsi">
+                                               
+                                        <?php
+                                        echo "<option>Pilih Provinsi</option>";
+                                            for ($i=0; $i < count($data['provinsi']); $i++) { ?>
+                                                <option value="<?=$data['provinsi'][$i]['province_id']?>"><?=$data['provinsi'][$i]['province']?></option>
+                                        <?php
+                                            }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
@@ -35,7 +44,7 @@
                             <div class="col-md-12">
                                 <div class="country-select">
                                     <label>Kurir<span class="required">*</span></label>
-                                    <select>
+                                    <select id="kabupaten">
                                         
                                     </select>
                                 </div>
@@ -93,18 +102,14 @@
                                         <span class="amount">£165.00</span>
                                     </td>
                                 </tr>
-                                <tr class="cart_item">
-                                    <td class="product-name">
-                                        Vestibulum dictum <strong class="product-quantity"> × 1</strong>
-                                    </td>
-                                    <td class="product-total">
-                                        <span class="amount">£50.00</span>
-                                    </td>
-                                </tr>
                             </tbody>
                             <tfoot>
                                 <tr class="cart-subtotal">
                                     <th>Cart Subtotal</th>
+                                    <td><span class="amount">£215.00</span></td>
+                                </tr>
+                                <tr class="cart-subtotal">
+                                    <th>Ongkos Kirim</th>
                                     <td><span class="amount">£215.00</span></td>
                                 </tr>
                                 <tr class="order-total">
@@ -171,3 +176,18 @@
     </div>
 </div>
 <!-- checkout-area end -->
+		<!-- all js here -->
+        
+        <script src="<?= BASE_URL ?>/assets/js/vendor/jquery-1.12.0.min.js"></script>
+        <script src="<?= BASE_URL ?>/assets/js/popper.js"></script>
+        <script src="<?= BASE_URL ?>/assets/js/bootstrap.min.js"></script>
+        <script src="<?= BASE_URL ?>/assets/js/isotope.pkgd.min.js"></script>
+        <script src="<?= BASE_URL ?>/assets/js/imagesloaded.pkgd.min.js"></script>
+        <script src="<?= BASE_URL ?>/assets/js/jquery.counterup.min.js"></script>
+        <script src="<?= BASE_URL ?>/assets/js/waypoints.min.js"></script>
+        <script src="<?= BASE_URL ?>/assets/js/checkout.js"></script>
+        <script src="<?= BASE_URL ?>/assets/js/owl.carousel.min.js"></script>
+        <script src="<?= BASE_URL ?>/assets/js/plugins.js"></script>
+        <script src="<?= BASE_URL ?>/assets/js/main.js"></script>
+    </body>
+</html>
