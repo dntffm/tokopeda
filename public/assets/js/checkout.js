@@ -23,7 +23,14 @@ $(document).ready(function(){
             url : "http://localhost/tokopeda/public/cart/getDataOngkir/",
             data : {berat : berat,kotaTujuan : kotaTujuan, kurir : kurir},
             success : function(data){
-               console.log(data);
+                json = JSON.parse(data);
+                cost = json["rajaongkir"]["results"][0]["costs"][0]["cost"][0]["value"];
+                subtotal = $("#subtotal").text().replace("Rp","").replace(".","").split(".").join("");
+            
+                subtotal = parseInt(subtotal);
+                
+                $("#ongkir").text("Rp."+cost);
+                $("#totalorder").text(cost+subtotal);
             }
         })
     })

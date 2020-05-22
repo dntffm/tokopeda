@@ -3,9 +3,11 @@
     for ($i=0; $i < count($_SESSION["cart"]) ; $i++) { 
         $totalBerat += $_SESSION["cart"][$i]["weight"];
     }
+
+    var_dump($_SESSION["cart"]);
 ?>
 <!-- checkout-area start -->
-<div class="checkout-area pt-130 pb-100">
+<div class="checkout-area mt-5 pt-130 pb-100">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-12 col-12">
@@ -87,9 +89,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-12 order-button-payment">
-                                <input type="submit" id="submit" value="Place order" />
-                            </div> 
+                            
                         </div>
                     </div>
                 </form>
@@ -97,6 +97,7 @@
             <div class="col-lg-6 col-md-12 col-12">
                 <div class="your-order">
                     <h3>Your order</h3>
+                    <p>*Lengkapi data disamping terlebih dahulu sebelum checkout</p>
                     <div class="your-order-table table-responsive">
                         <table>
                             <thead>
@@ -106,19 +107,32 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php
+                                $subtotal = 0; 
+                                foreach ($_SESSION["cart"] as $product) :  
+                                    $price = $product["product_price"];
+                                    $price = str_replace('.','',$price);
+                                    $price = (int) $price;
+                            ?>
+                                
                                 <tr class="cart_item">
                                     <td class="product-name">
-                                        Vestibulum suscipit <strong class="product-quantity"> × 1</strong>
+                                      <?= $product["product_name"] ?> <strong class="product-quantity"> × <?=$product["qty"]?></strong>
                                     </td>
                                     <td class="product-total">
-                                        <span class="amount">£165.00</span>
+                                        <span class="amount">Rp.<?=$product["product_price"]?></span>
                                     </td>
                                 </tr>
+                            <?php $subtotal+=$price; endforeach; ?>
                             </tbody>
                             <tfoot>
                                 <tr class="cart-subtotal">
-                                    <th>Cart Subtotal</th>
-                                    <td><span class="amount">£215.00</span></td>
+                                    <th><strong>Cart Subtotal</strong></th>
+                                    <td>
+                                        <strong>
+                                            <span class="amount" id="subtotal">Rp.<?=number_format($subtotal,0,".",".");?></span>
+                                        </strong>
+                                    </td>
                                 </tr>
                                 <tr class="cart-subtotal">
                                     <th>Ongkos Kirim</th>
@@ -126,7 +140,7 @@
                                 </tr>
                                 <tr class="order-total">
                                     <th>Order Total</th>
-                                    <td><strong><span class="amount">£215.00</span></strong>
+                                    <td><strong><span class="amount" id="totalorder"></span></strong>
                                     </td>
                                 </tr>
                             </tfoot>
@@ -176,6 +190,9 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-12 order-button-payment">
+                                    <input type="submit" id="submit" value="Place order" />
+                                </div> 
                             </div>
                         </div>
                     </div>

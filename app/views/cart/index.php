@@ -17,6 +17,7 @@
                                     <th class="product-price">products name</th>
                                     <th class="product-name">price</th>
                                     <th class="product-price">quantity</th>
+                                    <th class="product-price">weight</th>
                                     <th class="product-quantity">Sub Total</th>
                                     <th class="product-subtotal">delete</th>
                                 </tr>
@@ -24,13 +25,15 @@
                             <tbody>
                                 <?php
                                                     $total = 0;
+                                                    $quantity = 0;
+                                                    $weights = 0;
                                                     foreach ($_SESSION["cart"] as $product) :
                                                     $price = $product["product_price"];
                                                     $price = str_replace('.','',$price);
                                                     $price = (int) $price;
                                                     $totalPerProduct = number_format($product["qty"] * $price,0,".",".");
-                                                    
-
+                                                    $quantity += $product["qty"];
+                                                    $weights += $product["weight"];
                                                 ?>
                                 <tr>
                                     <td class="product-thumbnail">
@@ -46,6 +49,7 @@
                                                 <input class="input-text qty text" name="qty[]" type="number" step="1" min="0" value="<?=$product["qty"]?>" size="4">
                                         </div>
                                     </td>
+                                    <td class="product-price"><span class="amount"><?=$product["weight"]?> KG</span>
                                     <td class="product-subtotal">Rp.
                                         <?= $totalPerProduct;  ?></td>
                                     <td class="product-cart-icon product-subtotal">
@@ -56,11 +60,18 @@
                                     $total += ($product["qty"] * $price);
                                     endforeach; 
                                 ?>
-                                <tr style="margin-top:10px">
-                                    <th colspan="4" class="product-subtotal" style="padding-right:155px;text-align:right;">Total</th>
-                                    <th class="product-subtotal" >Rp.<?=number_format( $total,0,".",".");?></th>
-                                </tr>
+                                
                             </tbody>
+                            <tfoot style="padding:30px">
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th class="product-subtotal">Total</th>
+                                    <th class="product-subtotal"><?=$quantity?></th>
+                                    <th class="product-subtotal"><?=$weights?> KG</th>
+                                    <th class="product-subtotal">Rp.<?=number_format( $total,0,".",".");?></th>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
