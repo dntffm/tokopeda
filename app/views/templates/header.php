@@ -80,25 +80,28 @@
                                     <div class="header-cart cart-small-device">
                                         <button class="icon-cart">
                                             <i class="ti-shopping-cart"></i>
-                                            <span class="count-style">0</span>
+                                            <span class="count-style"><?=count($_SESSION["cart"])?></span>
                                             <span class="count-price-add">$295.95</span>
                                         </button>
                                         <div class="shopping-cart-content">
                                             <ul>
+                                                <?php foreach ($_SESSION["cart"] as $product) : ?>
+                                                
+                                                
                                                 <li class="single-shopping-cart">
                                                     <div class="shopping-cart-title">
-                                                        <h3><a href="#">Gloriori GSX 250 R </a></h3>
-                                                        <span>Price: $275</span>
-                                                        <span>Qty: 01</span>
+                                                        <h3><a href="#"><?=$product["product_name"]?></a></h3>
+                                                        <span>Harga: <?=$product["product_price"]?></span>
+                                                        <span>Qty: <?=$product["qty"]?></span>
                                                     </div>
                                                     <div class="shopping-cart-delete">
                                                         <a href="#"><i class="icofont icofont-ui-delete"></i></a>
                                                     </div>
                                                 </li>
+
+                                                <?php  endforeach;?>
                                             </ul>
-                                            <div class="shopping-cart-total">
-                                                <h4>total: <span>$550.00</span></h4>
-                                            </div>
+                                            
                                             <div class="shopping-cart-btn">
                                                 <a class="btn-style cr-btn" href="<?=BASE_URL?>/cart">Ke Keranjang Belanja</a>
                                                 <a class="btn-style cr-btn" href="<?=BASE_URL?>/checkout">checkout</a>
@@ -126,27 +129,27 @@
                             <div class="header-cart">
                                 <button class="icon-cart">
                                     <i class="ti-shopping-cart"></i>
-                                    <span class="count-style">0</span>
+                                    <span class="count-style"><?=count($_SESSION["cart"])?></span>
                                 </button>
                                 <div class="shopping-cart-content">
                                     <ul>
-                                        <li class="single-shopping-cart">
-                                            <div class="shopping-cart-img">
-                                                <a href="#"><img alt="" src="<?=BASE_URL?>/assets/img/cart/cart-1.jpg"></a>
-                                            </div>
-                                            <div class="shopping-cart-title">
-                                                <h3><a href="#">Gloriori GSX 250 R </a></h3>
-                                                <span>Price: $275</span>
-                                                <span>Qty: 01</span>
-                                            </div>
-                                            <div class="shopping-cart-delete">
-                                                <a href="#"><i class="icofont icofont-ui-delete"></i></a>
-                                            </div>
-                                        </li>
+                                    <?php foreach ($_SESSION["cart"] as $product) : ?>
+                                                
+                                                
+                                                <li class="single-shopping-cart">
+                                                    <div class="shopping-cart-title">
+                                                        <h3><a href="#"><?=$product["product_name"]?></a></h3>
+                                                        <span>Harga: <?=$product["product_price"]?></span>
+                                                        <span>Qty: <?=$product["qty"]?></span>
+                                                    </div>
+                                                    <div class="shopping-cart-delete">
+                                                        <a href="#"><i class="icofont icofont-ui-delete"></i></a>
+                                                    </div>
+                                                </li>
+
+                                                <?php  endforeach;?>
                                     </ul>
-                                    <div class="shopping-cart-total">
-                                        <h4>total: <span>$550.00</span></h4>
-                                    </div>
+                                    
                                     <div class="shopping-cart-btn">
                                         <a class="btn-style cr-btn" href="<?=BASE_URL?>/cart">Ke Keranjang Belanja</a>
                                         <a class="btn-style cr-btn" href="<?=BASE_URL?>/checkout">checkout</a>
