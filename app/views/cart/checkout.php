@@ -4,7 +4,6 @@
         $totalBerat += $_SESSION["cart"][$i]["weight"];
     }
 
-    var_dump($_SESSION["cart"]);
 ?>
 <!-- checkout-area start -->
 <div class="checkout-area mt-5 pt-130 pb-100">
