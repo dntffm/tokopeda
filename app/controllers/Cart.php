@@ -18,7 +18,7 @@ class Cart extends Controller{
                     "product_price" => $data["product_price"],
                     "stock" => $data["stock"],
                     "qty" => 1,
-                    ""
+                    "weight" => $data["weight"]
                 );  
 
                 if(!empty($_SESSION["cart"])){
@@ -85,8 +85,15 @@ class Cart extends Controller{
     }
 
     public function getKotaByProvId(){
-        $provinsiId = 2;
-        $this->model("Rajaongkir")->getKota($provinsiId);
+        $this->model("Rajaongkir")->getKota($_POST["idProv"]);
         
+    }
+
+    public function getDataOngkir(){ 
+        $data["berat"] = $_POST["berat"];
+        $data["kotaTujuan"] =$_POST["kotaTujuan"];
+        $data["kurir"] = $_POST["kurir"];
+        $this->model("Rajaongkir")->getOngkir($data);
+
     }
 }

@@ -1,17 +1,23 @@
+<?php
+    $totalBerat = 0;
+    for ($i=0; $i < count($_SESSION["cart"]) ; $i++) { 
+        $totalBerat += $_SESSION["cart"][$i]["weight"];
+    }
+?>
 <!-- checkout-area start -->
 <div class="checkout-area pt-130 pb-100">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-12 col-12">
-                <form action="#">
+                <form action="#" method="post">
                     <div class="checkbox-form">
                         <h3>Detail Penerima</h3>
                         <div class="row">
-                            
                             <div class="col-md-12">
                                 <div class="checkout-form-list">
                                     <label>Nama Penerima <span class="required">*</span></label>
-                                    <input type="text" placeholder="" />
+                                    <input type="text" placeholder="" required>
+                                    <input type="hidden" id="berat" placeholder=""  value="<?=$totalBerat;?>">
                                 </div>
                             </div>
                             <?php
@@ -44,29 +50,32 @@
                             <div class="col-md-12">
                                 <div class="country-select">
                                     <label>Kurir<span class="required">*</span></label>
-                                    <select>
-                                        
+                                    <select id="kurir" required>
+                                            <option value="kuris">Pilih Kurir</option>
+                                            <option value="jne">JNE</option>
+                                            <option value="pos">Pos Indonesia</option>
+                                            <option value="tiki">TIKI</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="checkout-form-list">
                                     <label>Kode Pos<span class="required">*</span></label>
-                                    <input type="text" placeholder="" />
+                                    <input type="text" placeholder="" required>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="order-notes">
                                     <div class="checkout-form-list mrg-nn">
                                         <label>Detail Alamat <span class="required">*</span></label>
-                                    <textarea name="detail-alamat" id="" cols="30" rows="30"></textarea>
+                                    <textarea name="detail-alamat" id="" cols="30" rows="30" required></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="checkout-form-list">
                                     <label>Phone <span class="required">*</span></label>
-                                    <input type="text" />
+                                    <input type="text" name="phone" required>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -74,9 +83,12 @@
                                     <div class="checkout-form-list mrg-nn">
                                         <label>Order Notes</label>
                                         <textarea id="checkout-mess" cols="30" rows="10"
-                                            placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                            placeholder="Notes about your order, e.g. special notes for delivery." required></textarea>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-md-12 order-button-payment">
+                                <input type="submit" id="submit" value="Place order" />
                             </div> 
                         </div>
                     </div>
@@ -110,7 +122,7 @@
                                 </tr>
                                 <tr class="cart-subtotal">
                                     <th>Ongkos Kirim</th>
-                                    <td><span class="amount">£215.00</span></td>
+                                    <td><span class="amount" id="ongkir"></span></td>
                                 </tr>
                                 <tr class="order-total">
                                     <th>Order Total</th>
@@ -164,9 +176,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="order-button-payment">
-                                <input type="submit" value="Place order" />
                             </div>
                         </div>
                     </div>

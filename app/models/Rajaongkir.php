@@ -56,7 +56,7 @@ class Rajaongkir{
         if ($err) {
         echo "cURL Error #:" . $err;
         } else {
-
+            echo "<option>Pilih Kota Tujuan</option>";
             $data = json_decode($response, true);
             for ($i=0; $i < count($data['rajaongkir']['results']); $i++) { 
                 echo "<option value='".$data['rajaongkir']['results'][$i]['city_id']."'>".$data['rajaongkir']['results'][$i]['city_name']."</option>";
@@ -64,7 +64,7 @@ class Rajaongkir{
         }
     }
     
-    public function getOngkir(){
+    public function getOngkir($data){
         //ongkir
         $curl = curl_init();
 
@@ -76,10 +76,10 @@ class Rajaongkir{
         CURLOPT_TIMEOUT => 30,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS => "origin=501&destination=114&weight=1700&courier=jne",
+        CURLOPT_POSTFIELDS => "origin=501&destination=".$data['kotaTujuan']."&weight=".$data['berat']."&courier=".$data['kurir'],
         CURLOPT_HTTPHEADER => array(
             "content-type: application/x-www-form-urlencoded",
-            "8ab0446315ad50db50dfaa6b17fb955f"
+            "key: 70537d44e983cc972969291578a2e70e"
         ),
         ));
 
@@ -91,7 +91,7 @@ class Rajaongkir{
         if ($err) {
         echo "cURL Error #:" . $err;
         } else {
-        return $response;
+            echo $response;
         }
     }
     
