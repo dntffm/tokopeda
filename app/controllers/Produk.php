@@ -11,6 +11,7 @@ class Produk extends Controller{
 
     public function produk_detail($id){
         $data["product"] = $this->model("Produk_model")->getProductById($id);
+        
         $this->view("templates/header");
         $this->view("produk/produk_detail",$data);
         $this->view("templates/footer");

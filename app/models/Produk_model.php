@@ -33,7 +33,7 @@ class Produk_model{
         
         $query = "INSERT INTO product
                     VALUES
-                    ('',:product_name,:product_price,:stock,:kind,:status,:product_brand,:date_created,:description,:tags,:product_image)";
+                    ('',:product_name,:product_price,:stock,:kind,:status,:weight,:product_brand,:date_created,:updated_at,:description,:tags,:product_image)";
         
         $this->db->query($query);
         $this->db->bind("product_name",$data["product_name"]);
@@ -41,8 +41,10 @@ class Produk_model{
         $this->db->bind("stock",1);
         $this->db->bind("kind",$data["kind"]);
         $this->db->bind("status","ready");
+        $this->db->bind("weight",$data["weight"]);
         $this->db->bind("product_brand",$data["product_brand"]);
         $this->db->bind("date_created",date("Y-m-d H:i:s"));
+        $this->db->bind("updated_at",date("Y-m-d H:i:s"));
         $this->db->bind("description",$data["description"]);
         $this->db->bind("tags",$data["tags"]);
         $this->db->bind("product_image",$data["product_image"]);

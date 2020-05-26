@@ -29,7 +29,7 @@ $(document).ready(function(){
             
                 subtotal = parseInt(subtotal);
                 
-                $("#ongkir").text("Rp."+cost);
+                $("#ongkir").text("Rp."+cost*berat);
                 $("#totalorder").text(cost+subtotal);
             }
         })

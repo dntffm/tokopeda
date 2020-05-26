@@ -11,11 +11,11 @@
                         <div class="product-details-large tab-content">
                             <div class="tab-pane active" id="pro-details1">
                                 <div class="easyzoom easyzoom--overlay">
-                                    <a href="assets/img/product-details/bl1.jpg">
+                                    <a href="">
                                         <img src="<?=BASE_URL?>/assets/img/product/<?=$data["product"]["product_image"]?>"
                                             alt="">
                                     </a>
-                                </div>
+                                </div>  
                             </div>
                         </div>
                     </div>
@@ -48,18 +48,21 @@
                             <?php endforeach; ?>
                         </ul>
                     </div>
+                                  
                     <div class="quickview-plus-minus">
-                        <div class="cart-plus-minus">
-                            <input type="text" data-max="<?=$data["product"]["stock"]?>" value="0" name="qtybutton"
-                                class="cart-plus-minus-box">
-                        </div>
-                        <div class="quickview-btn-cart">
-                            <a class="btn-style cr-btn" href="#"><span>add to cart</span></a>
-                        </div>
-                        <div class="quickview-btn-wishlist">
-                            <a class="btn-hover cr-btn" href="#"><span><i
-                                        class="icofont icofont-heart-alt"></i></span></a>
-                        </div>
+                       
+                            <div class="container">
+                                <div class="row">
+                                    <form action="<?=BASE_URL?>/cart/add/<?=$data["product"]["product_id"]?>" method="post">
+                                        <div class="cart-plus-minus">
+                                        <input type="text" name="qty" data-max="<?=$data["product"]["stock"]?>" value="1" name="qtybutton"
+                                            class="cart-plus-minus-box">
+                                        </div>
+                                        
+                                        <button type="submit" name="login" class="mt-2 btn-style cr-btn"><span>Tambah ke keranjang</span></button>
+                                    </form>
+                                </div>
+                            </div>
                     </div>
 
                 </div>
@@ -67,3 +70,4 @@
         </div>
     </div>
 </div>
+

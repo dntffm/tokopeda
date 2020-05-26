@@ -200,20 +200,20 @@
         var maxValue = $button.parent().find("input").attr("data-max");
         console.log(maxValue);
         if ($button.text() === "+") {
-            var newVal = 0;
+            var newVal = 1;
             if(oldValue == maxValue){
-                newVal = 0;
+                newVal = 1;
             } else{
                 newVal = parseFloat(oldValue) + 1;
             }
             
         } else {
             // Don't allow decrementing below zero
-            if (oldValue > 0) {
+            if (oldValue > 1) {
                 var newVal = parseFloat(oldValue) - 1;
             } 
             else {
-                newVal = 1;
+                newVal = maxValue;
             }
         }
         $button.parent().find("input").val(newVal);

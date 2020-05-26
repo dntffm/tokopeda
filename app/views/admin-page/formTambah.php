@@ -23,6 +23,10 @@
                                 <input type="text" class="form-control" id="harga-produk" name="harga-produk" required>
                             </div>
                             <div class="form-group">
+                                <label for="weight">Berat</label>
+                                <input type="text" class="form-control" id="weight" name="weight" required>
+                            </div>
+                            <div class="form-group">
                                 <label for="brand-produk">Brand Produk</label>
                                 <input type="text" class="form-control" id="brand-produk" name="brand-produk" required>
                             </div>

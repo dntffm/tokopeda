@@ -12,12 +12,18 @@ class Cart extends Controller{
             if($_SESSION["isauth"] == true){
                 $data = $this->model("Produk_model")->getProductById($id);
                 
+                if(isset($_POST["qty"])){
+                    $qty = $_POST["qty"];
+                } else {
+                    $qty = 1;
+                }
+
                 $data = array(
                     "product_id" => $data["product_id"],
                     "product_name" => $data["product_name"],
                     "product_price" => $data["product_price"],
                     "stock" => $data["stock"],
-                    "qty" => 1,
+                    "qty" => $qty,
                     "weight" => $data["weight"]
                 );  
 
@@ -99,5 +105,10 @@ class Cart extends Controller{
         $data["kurir"] = $_POST["kurir"];
         $this->model("Rajaongkir")->getOngkir($data);
 
+    }
+
+    public function add2($id){
+        echo $id;
+        var_dump($_POST);
     }
 }
