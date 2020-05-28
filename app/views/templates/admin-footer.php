@@ -41,6 +41,7 @@
 
  <!-- Bootstrap core JavaScript-->
  <script src="<?=BASE_URL?>/admin-page/assets/vendor/jquery/jquery.js"></script>
+ <script src="<?=BASE_URL?>/admin-page/assets/js/popper.js"></script>
  <script src="<?=BASE_URL?>/admin-page/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
  <!-- Core plugin JavaScript-->

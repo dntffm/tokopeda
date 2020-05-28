@@ -325,8 +325,8 @@
         animation: 'fade'
     });
 
-    $
 
 
+    
 
 })(jQuery);

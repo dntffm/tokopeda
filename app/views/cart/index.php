@@ -24,7 +24,7 @@
                             </thead>
                             <tbody>
                                 <?php
-                                                    if(isset($_SESSION["cart"])) :
+                                                    if(isset($_SESSION["cart"])) {
                                                     $total = 0;
                                                     $quantity = 0;
                                                     $weights = 0;
@@ -62,7 +62,7 @@
                                     endforeach; 
                                     
                                 ?>
-                                
+                               
                             </tbody>
                             <tfoot style="padding:30px">
                                 <tr>
@@ -74,7 +74,11 @@
                                     <th class="product-subtotal">Rp.<?=number_format( $total,0,".",".");?></th>
                                 </tr>
                             </tfoot>
-                            <?php endif;?>
+                                <?php } else {?>
+                            <tr>
+                                    <td>Belum Ada Transaksi :), Buy some stuff first</td>
+                                </tr>
+                                <?php } ?>
                         </table>
                     </div>
                 </div>

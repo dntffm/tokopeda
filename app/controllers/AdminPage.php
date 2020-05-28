@@ -104,5 +104,11 @@ class AdminPage extends Controller{
             exit;
         }
     }
+
+    public function ubahStatusorder($id,$status){
+        if($this->model("Order_model")->ubahStatus($id,$status) > 0){
+            header("Location: ".BASE_URL."/adminpage/laporanpenjualan");
+        }
+    }
    
 }

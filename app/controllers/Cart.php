@@ -127,4 +127,10 @@ class Cart extends Controller{
     public function invoice($id){
         $this->view("cart/invoice");
     }
+
+    public function ubahStatusorder($id,$status){
+        if($this->model("Order_model")->ubahStatus($id,$status) > 0){
+            header("Location: ".BASE_URL."/cart/history");
+        }
+    }
 }

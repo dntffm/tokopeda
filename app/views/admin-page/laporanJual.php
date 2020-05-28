@@ -35,7 +35,7 @@
         <tbody>
           <?php 
             $no = 1; 
-            foreach($data as $order) :
+            foreach($data as $order) :  
             $total = (int) $order["kuantitas"] * (int) str_replace('.','',$order["product_price"]);
             
           ?>
@@ -47,7 +47,15 @@
             <td><?=$order["kuantitas"]?></td>
             <td>Rp. <?=number_format($total,0,'.','.')?></td>
             <td><?=$order["status_order"]?></td>
-            <td>asda</td>
+            <td>
+              <?php if($order["status_order"] == "paid") { ?>
+                <a href="<?=BASE_URL?>/Adminpage/ubahstatusorder/<?=$order["id_order"]?>" class="btn btn-danger" > 
+                  Kirim Barang
+                </a>
+              <?php } if($order["status_order"] == "done"){ ?>
+                <p>Barang sudah diterima</p>
+              <?php } ?>
+            </td>
           </tr>
           <?php endforeach; ?>
         </tbody>
@@ -60,4 +68,7 @@
 <!-- /.container-fluid -->
 
 </div>
+
+
+
 <!-- End of Main Content -->

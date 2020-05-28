@@ -90,4 +90,15 @@ class Order_model{
 
         return $this->db->resultSet();
     }
+
+    public function ubahStatus($id,$status){
+        $query = "UPDATE orders SET status_order=:status_order WHERE id_order=:id_order";
+
+        $this->db->query($query);
+        $this->db->bind("id_order",$id);
+        $this->db->bind("status_order",$status);
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 }
