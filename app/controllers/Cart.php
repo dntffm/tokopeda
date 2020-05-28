@@ -90,11 +90,7 @@ class Cart extends Controller{
        
     }
 
-    public function note(){
-        
-    }
-
-    public function getKotaByProvId(){
+      public function getKotaByProvId(){
         $this->model("Rajaongkir")->getKota($_POST["idProv"]);
         
     }
@@ -107,8 +103,28 @@ class Cart extends Controller{
 
     }
 
-    public function add2($id){
-        echo $id;
-        var_dump($_POST);
+    public function proceedOrder(){
+        $lasinsertid = $this->model("Order_model")->insertOrder($_POST);
+
+        if($this->model("Order_model")->insertOrderDetail($lasinsertid) > 0){
+            if($this->model("Order_model")->minStock() > 0){
+                unset($_SESSION["cart"]);
+                header("Location: ".BASE_URL."/cart/history");
+            }
+        }
+
+        /* var_dump($_SESSION);
+        var_dump($_POST); */
+    }
+
+    public function history(){
+        $data = $this->model("Order_model")->getOrderListByUser($_SESSION["cust_id"]);
+        $this->view("templates/header");
+        $this->view("cart/history",$data);
+        $this->view("templates/footer");
+    }
+    
+    public function invoice($id){
+        $this->view("cart/invoice");
     }
 }

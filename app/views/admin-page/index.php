@@ -1,5 +1,5 @@
 
- <!-- Begin Page Content -->
+<!-- Begin Page Content -->
  <div class="container-fluid">
      <!-- Page Heading -->
      <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -74,7 +74,7 @@
                          <div class="col mr-2">
                              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Jumlah Produk
                              </div>
-                             <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$data["jmlproduk"]["COUNT(*)"]?></div>
                          </div>
                          <div class="col-auto">
                              <i class="fas fa-comments fa-2x text-gray-300"></i>

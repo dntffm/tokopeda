@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     $("#provinsi").change(function(){
         var idProv = $("#provinsi").val();
         json = null;
@@ -17,7 +18,7 @@ $(document).ready(function(){
         var berat = $("#berat").val();
         var kotaTujuan = $("#kabupaten").val();
         var kurir = $("#kurir").val();
-
+        
         $.ajax({
             type : "POST",
             url : "http://localhost/tokopeda/public/cart/getDataOngkir/",
@@ -25,12 +26,18 @@ $(document).ready(function(){
             success : function(data){
                 json = JSON.parse(data);
                 cost = json["rajaongkir"]["results"][0]["costs"][0]["cost"][0]["value"];
-                subtotal = $("#subtotal").text().replace("Rp","").replace(".","").split(".").join("");
-            
-                subtotal = parseInt(subtotal);
-                
-                $("#ongkir").text("Rp."+cost*berat);
-                $("#totalorder").text(cost+subtotal);
+                cost = parseFloat(cost) * parseFloat(berat);
+                console.log(cost);
+                subtotal = $("#subtotal").text().replace("Rp","").replace(".","").split(".").join("");  
+                subtotal = parseFloat(subtotal);
+                total = cost+subtotal;
+
+                formatedCost = cost.toString().split('').reverse().join('').match(/\d{1,3}/g).join('.').split('').reverse().join('');
+                formatedTotal = total.toString().split('').reverse().join('').match(/\d{1,3}/g).join('.').split('').reverse().join('');
+
+
+               
+                $("#total").text("Rp. "+formatedTotal);
             }
         })
     })

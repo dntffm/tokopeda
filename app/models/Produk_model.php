@@ -8,6 +8,11 @@ class Produk_model{
         $this->db = new Database;
     }
 
+    public function countProduct(){
+       $this->db->query("SELECT COUNT(*) FROM ".$this->table);
+       return $this->db->single();
+    }
+
     public function getAllProducts(){
         $this->db->query("SELECT * FROM ".$this->table);
         return $this->db->resultSet();

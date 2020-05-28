@@ -1,37 +1,55 @@
+ <?php
+/*  echo "<pre>";
+ var_dump($data);
+ echo "</pre>"; */
+
+ ?>
+ 
  <!-- Begin Page Content -->
  <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Tables</h1>
-<p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+<h1 class="h3 mb-2 text-gray-800">Laporan Penjualan</h1>
+
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    <h6 class="m-0 font-weight-bold text-primary">Laporan Penjualan</h6>
   </div>
   <div class="card-body">
     <div class="table-responsive">
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
+            <th>#</th>
+            <th>Tanggal Order</th>
+            <th>Nama Penerima</th>
+            <th>Nama Produk</th>
+            <th>Kuantitas</th>
+            <th>Total harga</th>
+            <th>Status</th>
+            <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
+          <?php 
+            $no = 1; 
+            foreach($data as $order) :
+            $total = (int) $order["kuantitas"] * (int) str_replace('.','',$order["product_price"]);
+            
+          ?>
           <tr>
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td>$320,800</td>
+            <td><?=$no++;?></td>
+            <td><?= DateTime::createFromFormat('Y-m-d H:i:s',$order["created_at"])->format("d/m/Y") ?></td>
+            <td><?=$order["nm_penerima"]?></td>
+            <td><?=$order["product_name"]?></td>
+            <td><?=$order["kuantitas"]?></td>
+            <td>Rp. <?=number_format($total,0,'.','.')?></td>
+            <td><?=$order["status_order"]?></td>
+            <td>asda</td>
           </tr>
+          <?php endforeach; ?>
         </tbody>
       </table>
     </div>

@@ -24,6 +24,7 @@
                             </thead>
                             <tbody>
                                 <?php
+                                                    if(isset($_SESSION["cart"])) :
                                                     $total = 0;
                                                     $quantity = 0;
                                                     $weights = 0;
@@ -59,6 +60,7 @@
                                 <?php
                                     $total += ($product["qty"] * $price);
                                     endforeach; 
+                                    
                                 ?>
                                 
                             </tbody>
@@ -72,6 +74,7 @@
                                     <th class="product-subtotal">Rp.<?=number_format( $total,0,".",".");?></th>
                                 </tr>
                             </tfoot>
+                            <?php endif;?>
                         </table>
                     </div>
                 </div>
@@ -80,18 +83,24 @@
                 <div class="col-md-12">
                     <div class="cart-shiping-update">
                         <div class="cart-shipping">
-                            <a class="btn-style cr-btn" href="<?=BASE_URL?>/produk">
-                                <span>continue shopping</span>
+                        <a class="btn-style cr-btn" href="<?=BASE_URL?>/cart/history">
+                                <span>Riwayat Belanja</span>
                             </a>
+                            <a class="btn-style cr-btn" href="<?=BASE_URL?>/produk">
+                                <span>Lanjut Belanja</span>
+                            </a>
+                            
                         </div>
                         <div class="update-checkout-cart">
                             <div class="update-cart">
                                 <button type="submit" name="update" class="btn-style cr-btn"><span>update</span></button>
                             </div>
                             <div class="update-cart">
+                                <?php if(isset($_SESSION["cart"])) : ?>
                                 <a class="btn-style cr-btn" href="<?= BASE_URL?>/cart/checkout">
                                     <span>checkout</span>
                                 </a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>

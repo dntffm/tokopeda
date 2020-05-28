@@ -173,7 +173,9 @@
                                         <span>Qty: <?=$product["qty"]?></span>
                                     </div>
                                     <div class="shopping-cart-delete">
-                                        <a href="#"><i class="icofont icofont-ui-delete"></i></a>
+                                        <a href="<?=BASE_URL?>/cart/delete/<?=$product["product_id"]?>" onclick="return confirm('Apakah anda yakin?')">
+                                            <i class="icofont icofont-ui-delete"></i>
+                                        </a>
                                     </div>
                                 </li>
 
@@ -183,7 +185,6 @@
 
                             <div class="shopping-cart-btn">
                                 <a class="btn-style cr-btn" href="<?=BASE_URL?>/cart">Ke Keranjang Belanja</a>
-                                <a class="btn-style cr-btn" href="<?=BASE_URL?>/checkout">checkout</a>
                             </div>
                         </div>
                     </div>

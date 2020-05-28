@@ -3134,7 +3134,7 @@ p.lost-password a:hover {
     background-color: transparent;
 }
 .coupon-info p.form-row-last {}
-.coupon-info p.form-row input[type="submit"]:hover,
+.coupon-info p.form-row button[type="submit"]:hover,
 p.checkout-coupon input[type="submit"]:hover {
     background: #ffb52f none repeat scroll 0 0;
 }
@@ -3160,7 +3160,7 @@ p.checkout-coupon input[type="text"] {
     padding-left: 10px;
     width: 170px;
 }
-p.checkout-coupon input[type="submit"] {
+ button[type="submit"] {
     background: #333 none repeat scroll 0 0;
     border: medium none;
     border-radius: 0;
@@ -3359,7 +3359,7 @@ p.checkout-coupon input[type="submit"] {
     height: 60px;
     margin-left: 15px;
 }
-.order-button-payment input {
+.order-button-payment button {
     background: #464646 none repeat scroll 0 0;
     border: 1px solid transparent;
     color: #fff;
@@ -3374,12 +3374,12 @@ p.checkout-coupon input[type="submit"] {
     transition: all 0.3s ease 0s;
     width: 100%;
 }
-.order-button-payment input:hover {
+.order-button-payment button:hover {
     background: #ffb52f;
     border: 1px solid #ffb52f;
     color: #fff;
 }
-.coupon-info p.form-row input[type="submit"] {
+button[type="submit"] {
     background: #252525 none repeat scroll 0 0;
     border: medium none;
     border-radius: 0;

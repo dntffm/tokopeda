@@ -2,10 +2,13 @@
 
 class AdminPage extends Controller{
     public function index(){
+        $data["jmlproduk"] = $this->model("Produk_model")->countProduct();
         $this->view("templates/admin-header");
-        $this->view("admin-page/index");
+        $this->view("admin-page/index",$data);
         $this->view("templates/admin-footer");
     }
+
+    
 
     public function login(){
         $this->view("admin-page/login");
@@ -36,8 +39,9 @@ class AdminPage extends Controller{
     }
 
     public function LaporanPenjualan(){
+        $data = $this->model("Order_model")->getOrder();
         $this->view("templates/admin-header");
-        $this->view("admin-page/laporanJual");
+        $this->view("admin-page/laporanJual",$data);
         $this->view("templates/admin-footer");
     }
     public function formTambah(){

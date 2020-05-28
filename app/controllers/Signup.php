@@ -27,6 +27,7 @@ class Signup extends Controller{
             
             if(password_verify($_POST["user-password"],$data["password"])){
                 $_SESSION["username"] = $data["cust_uname"];
+                $_SESSION["cust_id"] = $data["cust_id"];
                 $_SESSION["isauth"] = true;
                 header("Location: ".BASE_URL);
             } else{
