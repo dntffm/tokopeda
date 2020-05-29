@@ -20,7 +20,7 @@ class Order_model{
 
         $query = "INSERT INTO orders 
                     VALUES('',:id_customer,:nm_penerima,:dst_province,:dst_city,:courier,:postal_code,:detail_address,
-                            :phone,:notes,:created_at,:status_order
+                            :phone,:notes,:od_created_at,:status_order
                     )
                 ";
         $this->db->query($query);
@@ -33,7 +33,7 @@ class Order_model{
         $this->db->bind("detail_address",$data["detail-alamat"]);
         $this->db->bind("phone",$data["phone"]);
         $this->db->bind("notes",$data["catatan"]);
-        $this->db->bind("created_at",date("Y-m-d H:i:s"));
+        $this->db->bind("od_created_at",date("Y-m-d H:i:s"));
         $this->db->bind("status_order","paid");
 
         $this->db->execute();
@@ -91,6 +91,13 @@ class Order_model{
         return $this->db->resultSet();
     }
 
+    public function getOrderListById($id){
+        $query = "SELECT * FROM orderlist WHERE id_order = :id_order";
+        $this->db->query($query);
+        $this->db->bind("id_order",$id);
+
+        return $this->db->resultSet();
+    }
     public function ubahStatus($id,$status){
         $query = "UPDATE orders SET status_order=:status_order WHERE id_order=:id_order";
 

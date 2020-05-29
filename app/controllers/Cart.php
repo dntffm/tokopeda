@@ -125,7 +125,8 @@ class Cart extends Controller{
     }
     
     public function invoice($id){
-        $this->view("cart/invoice");
+        $data = $this->model("Order_model")->getOrderListById($id);
+        $this->view("cart/invoice",$data);
     }
 
     public function ubahStatusorder($id,$status){

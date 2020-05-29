@@ -1,8 +1,9 @@
+
 <!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>A simple, clean, and responsive HTML invoice template</title>
+    <title>Invoice</title>
     
     <style>
     button{
@@ -121,9 +122,9 @@
                             </td>
                             
                             <td>
-                                Invoice #: 123<br>
-                                Created: January 1, 2015<br>
-                                Due: February 1, 2015
+                                Invoice #: <?=$data[0]["id_order"]?><br>
+                                Tanggal Beli: <?=$data[0]["od_created_at"]?><br>
+                                
                             </td>
                         </tr>
                     </table>
@@ -134,16 +135,22 @@
                 <td colspan="2">
                     <table>
                         <tr>
-                            <td>
-                                Sparksuite, Inc.<br>
-                                12345 Sunny Road<br>
-                                Sunnyville, CA 12345
-                            </td>
+                            
                             
                             <td>
-                                Acme Corp.<br>
-                                John Doe<br>
-                                john@example.com
+                                <strong>Nama penerima: </strong>
+                                <?=$data[0]["nm_penerima"]?><br>
+                                <strong>Alamat penerima:</strong>
+                                <?=$data[0]["dst_city"].",".$data[0]["dst_province"].','.$data[0]["postal_code"]?><br>
+                                <strong>Nomer HP: </strong>
+                                <?=$data[0]["phone"]?>
+                            </td>
+
+                            <td>
+                                <strong>ID Order: </strong>
+                                <?=$data[0]["id_order"]?><br>
+                                <strong>Jasa Kirim: </strong>
+                                <?=$data[0]["courier"]?>
                             </td>
                         </tr>
                     </table>
@@ -180,41 +187,24 @@
                 </td>
             </tr>
             
+            <?php $total = 0; foreach($data as $item) : $total+=((int) str_replace(".",'',$item["product_price"]) * $item["kuantitas"])?>
             <tr class="item">
                 <td>
-                    Website design
+                    <?=$item["product_name"]." (x".$item["kuantitas"].")"?>
                 </td>
                 
                 <td>
-                    $300.00
+                   Rp. <?=$item["product_price"]?>
                 </td>
             </tr>
-            
-            <tr class="item">
-                <td>
-                    Hosting (3 months)
-                </td>
-                
-                <td>
-                    $75.00
-                </td>
-            </tr>
-            
-            <tr class="item last">
-                <td>
-                    Domain name (1 year)
-                </td>
-                
-                <td>
-                    $10.00
-                </td>
-            </tr>
+            <?php endforeach; ?>
+           
             
             <tr class="total">
                 <td></td>
                 
                 <td>
-                   Total: $385.00
+                   Total: Rp.<?= number_format($total,0,'.','.') ?>
                 </td>
             </tr>
         </table>
