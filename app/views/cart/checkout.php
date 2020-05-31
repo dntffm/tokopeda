@@ -114,7 +114,7 @@
                                 foreach ($_SESSION["cart"] as $product) :  
                                     $price = $product["product_price"];
                                     $price = str_replace('.','',$price);
-                                    $price = (int) $price;
+                                    $price = (int) $price * $product["qty"];
                             ?>
 
                                     <tr class="cart_item">
