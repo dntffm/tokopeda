@@ -14,7 +14,7 @@ class Signup extends Controller{
             $data["email"] = filter_input(INPUT_POST,"user-email",FILTER_VALIDATE_EMAIL);
 
             if($this->model("Login_model")->registerCustomer($data) > 0){
-                $_SESSION["regsuccess"] = true;
+                Flasher::setFlash('success','Register Sukses','Silahkan Login');
                 header("Location: ".BASE_URL."/signup");
                 exit;
             }
@@ -31,7 +31,7 @@ class Signup extends Controller{
                 $_SESSION["isauth"] = true;
                 header("Location: ".BASE_URL);
             } else{
-                $_SESSION["isauth"] = false;
+                Flasher::setFlash("error","Login Gagal","Username atau password salah");
                 header("Location: ".BASE_URL."/signup");
             }
         }

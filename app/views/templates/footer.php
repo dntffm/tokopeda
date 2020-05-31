@@ -6,7 +6,7 @@
         <script src="<?= BASE_URL ?>/assets/js/imagesloaded.pkgd.min.js"></script>
         <script src="<?= BASE_URL ?>/assets/js/jquery.counterup.min.js"></script>
         <script src="<?= BASE_URL ?>/assets/js/waypoints.min.js"></script>
-        
+       
         <script src="<?= BASE_URL ?>/assets/js/owl.carousel.min.js"></script>
         <script src="<?= BASE_URL ?>/assets/js/plugins.js"></script>
         <script src="<?= BASE_URL ?>/assets/js/main.js"></script>

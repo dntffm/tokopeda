@@ -24,15 +24,7 @@
             <div class="col-lg-6">
                 <div class="product-details-content">
                     <h2><?=$data["product"]["product_name"]?></h2>
-                    <div class="quick-view-rating">
-                        <i class="fa fa-star reting-color"></i>
-                        <i class="fa fa-star reting-color"></i>
-                        <i class="fa fa-star reting-color"></i>
-                        <i class="fa fa-star reting-color"></i>
-                        <i class="fa fa-star reting-color"></i>
-                        <span> ( 01 Customer Review )</span>
-                        <p>Stok : <?=$data["product"]["stock"]?></p>
-                    </div>
+                    
                     <div class="product-price">
                         <span style="color:black">Rp.<?=$data["product"]["product_price"]?></span>
                     </div>
@@ -54,12 +46,16 @@
                             <div class="container">
                                 <div class="row">
                                     <form action="<?=BASE_URL?>/cart/add/<?=$data["product"]["product_id"]?>" method="post">
-                                        <div class="cart-plus-minus">
+                                        
+                                        <?php if($data["product"]["stock"] > 0) { ?>
+                                            <div class="cart-plus-minus">
                                         <input type="text" name="qty" data-max="<?=$data["product"]["stock"]?>" value="1" name="qtybutton"
                                             class="cart-plus-minus-box">
                                         </div>
-                                        
                                         <button type="submit" name="login" class="mt-2 btn-style cr-btn"><span>Tambah ke keranjang</span></button>
+                                        <?php }else{ ?>
+                                            <p class="alert alert-danger">Stock Habis</p>
+                                        <?php } ?>
                                     </form>
                                 </div>
                             </div>

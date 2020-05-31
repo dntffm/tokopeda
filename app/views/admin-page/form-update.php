@@ -42,8 +42,8 @@
                             <div class="form-group">
                                 <label for="status">Status</label>
                                 <select class="form-control" name="status" id="status" required>
-                                    <option value="ready">ready</option>
-                                    <option value="habis">habis</option>
+                                    <option value="visible">visible</option>
+                                    <option value="hidden">hidden</option>
                                 </select>
                             </div>
                             <div class="form-group">

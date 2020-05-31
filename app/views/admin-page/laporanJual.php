@@ -34,6 +34,7 @@
         </thead>
         <tbody>
           <?php 
+            if(isset($data)) {
             $no = 1; 
             foreach($data as $order) :  
             $total = (int) $order["kuantitas"] * (int) str_replace('.','',$order["product_price"]);
@@ -41,7 +42,7 @@
           ?>
           <tr>
             <td><?=$no++;?></td>
-            <td><?= DateTime::createFromFormat('Y-m-d H:i:s',$order["created_at"])->format("d/m/Y") ?></td>
+            <td><?= DateTime::createFromFormat('Y-m-d H:i:s',$order["od_created_at"])->format("d/m/Y") ?></td>
             <td><?=$order["nm_penerima"]?></td>
             <td><?=$order["product_name"]?></td>
             <td><?=$order["kuantitas"]?></td>
@@ -57,7 +58,11 @@
               <?php } ?>
             </td>
           </tr>
-          <?php endforeach; ?>
+          <?php
+              endforeach;
+            } 
+          ?>
+          
         </tbody>
       </table>
     </div>

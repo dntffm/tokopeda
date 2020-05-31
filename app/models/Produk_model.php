@@ -19,12 +19,12 @@ class Produk_model{
     }
 
     public function getProductSepeda(){
-        $this->db->query("SELECT * FROM ".$this->table.' WHERE kind="sepeda"');
+        $this->db->query("SELECT * FROM ".$this->table.' WHERE kind="sepeda" AND status="visible"');
         return $this->db->resultSet(); 
     }
 
     public function getProductAsesoris(){
-        $this->db->query("SELECT * FROM ".$this->table.' WHERE kind="asesoris"');
+        $this->db->query("SELECT * FROM ".$this->table.' WHERE kind="asesoris" AND status="visible"');
         return $this->db->resultSet(); 
     }
 
@@ -45,7 +45,7 @@ class Produk_model{
         $this->db->bind("product_price",$data["product_price"]);
         $this->db->bind("stock",1);
         $this->db->bind("kind",$data["kind"]);
-        $this->db->bind("status","ready");
+        $this->db->bind("status","visible");
         $this->db->bind("weight",$data["weight"]);
         $this->db->bind("product_brand",$data["product_brand"]);
         $this->db->bind("date_created",date("Y-m-d H:i:s"));
@@ -91,9 +91,8 @@ class Produk_model{
       
         return $this->db->rowCount();
     }
-    public function hapusProduk($id){
-        $query = "DELETE FROM product WHERE product_id=:id";
-
+    public function hapusStokProduk($id){
+        $query = "UPDATE product SET stock = 0 WHERE product_id=:id";
         $this->db->query($query);
         $this->db->bind("id",$id);
         $this->db->execute();

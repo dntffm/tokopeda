@@ -283,14 +283,14 @@
         sliderrange.slider({
             range: true,
             min: 0,
-            max: 1200,
-            values: [0, 1000],
+            max: 50000000,
+            values: [0, 5000000],
             slide: function(event, ui) {
-                amountprice.val("$" + ui.values[0] + " - $" + ui.values[1]);
+                amountprice.val("Rp." + ui.values[0] + " - Rp." + ui.values[1]);
             }
         });
-        amountprice.val("$" + sliderrange.slider("values", 0) +
-            " - $" + sliderrange.slider("values", 1));
+        amountprice.val("Rp." + sliderrange.slider("values", 0) +
+            " - Rp." + sliderrange.slider("values", 1));
     });
     
     

@@ -64,8 +64,9 @@ class AdminPage extends Controller{
 
     public function ubah(){
         if($this->model("Produk_model")->ubahProduk($_POST) > 0){
+            Flasher::setFlash('success','Ubah Produk Berhasil','');
             header("Location: ".BASE_URL."/AdminPage/edit");
-                exit;
+            exit;
         }
     }
 
@@ -91,16 +92,17 @@ class AdminPage extends Controller{
 
             if($this->model("Produk_model")->tambahProduk($data) > 0){  
                 move_uploaded_file($_FILES["gambar-produk"]["tmp_name"], $_SERVER["DOCUMENT_ROOT"]."/tokopeda/public/assets/img/product/".$newName);
-                
+                Flasher::setFlash('success','Tambah Produk Berhasil','');
                 header("Location: ".BASE_URL."/AdminPage/formTambah");
                 exit;
             }
         }
     }
 
-    public function hapus($id){
-        if($this->model("Produk_model")->hapusProduk($id) > 0){
-            header("Location: ".BASE_URL."/AdminPage/edit");
+    public function hapusStok($id){
+        if($this->model("Produk_model")->hapusStokProduk($id) > 0){
+            Flasher::setFlash('warning','Stok Produk telah dihapus','');
+            header("Location: ".BASE_URL."/AdminPage/Edit");
             exit;
         }
     }

@@ -16,8 +16,8 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-12">
                             <div class="overview-content">
-                                <h1><span>OSWAN</span> WORLD MOST </h1>
-                                <h2>LATGEST <span>MOTORCYCLE STORE</span></h2>
+                                <h1><span>TokoPeda</span> TOKO SEPEDA </h1>
+                                <h2><span>TERKEMUKA DI INDONESIA</span></h2>
                                 <p><span>OSWAN</span> the most latgest bike store in the wold can serve you latest            qulity of motorcycle also you can sell here your motorcycle it quo minus iduod maxie placeat facere possimus, omnis voluptas assumenda est, omnis dolor llendus. Temporibus autem quibusdam </p>
                                 <div class="question-area">
                                     <h4>HAVE ANY QUESTION? </h4>
@@ -26,7 +26,7 @@
                                             <i class="icofont icofont-phone"></i>
                                         </div>
                                         <div class="question-content-number">
-                                            <h6> 01245 658 698</h6>
+                                            <h6> +628123456789</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -43,7 +43,7 @@
             <div class="services-area pb-100">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-3 col-md-6">
+                        <!-- <div class="col-lg-3 col-md-6">
                             <div class="single-services orange mb-30 text-center">
                                 <div class="services-icon">
                                     <img alt="" src="assets/img/icon-img/3.png">
@@ -53,7 +53,7 @@
                                     <p>Free shipping on all order</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-lg-3 col-md-6">
                             <div class="single-services yellow mb-30 text-center">
                                 <div class="services-icon">
@@ -90,52 +90,4 @@
                     </div>
                 </div>
             </div>
-            <div class="testimonial-area">
-                <div class="container">
-                    <div class="section-title-2 section-title-position">
-                        <h2>OUR CLIENTS REVIEW</h2>
-                    </div>
-                    <div class="testimonial-active owl-carousel">
-                        <div class="single-testimonial">
-                            <div class="row">
-                                <div class="col-lg-5">
-                                    <div class="testimonial-img pl-75">
-                                        <img alt="image" src="assets/img/team/testimonial-1.jpg">
-                                    </div>
-                                </div>
-                                <div class="col-lg-7">
-                                    <div class="testimonial-content">
-                                        <div class="testimonial-dec">
-                                            <p><span>OSWAN</span> the most latgest bike store in the wold can serve you latest  qulity of motorcycle also you can sell here your motorcycle it quo minus iduod maxie placeat facere possimus, omnis voluptas assumenda est, omnis dolor llendus. Temporibus autem quibusdam quoten</p>
-                                        </div>
-                                        <div class="name-designation">
-                                            <h4>Rayed Ayash Hisham</h4>
-                                            <span>COO, ASEKHA</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-testimonial">
-                            <div class="row">
-                                <div class="col-lg-5 col-md-12 col-12">
-                                    <div class="testimonial-img pl-75">
-                                        <img alt="image" src="assets/img/team/testimonial-2.png">
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-md-12 col-12">
-                                    <div class="testimonial-content">
-                                        <div class="testimonial-dec">
-                                            <p><span>OSWAN</span> Lorem ipsum dolor sit amet, consectetur adipisicing , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo consequat. Duis dolor in reprehenderit.</p>
-                                        </div>
-                                        <div class="name-designation">
-                                            <h4>James Momen Nirob</h4>
-                                            <span>CEO, ASEKHA</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>  
+           

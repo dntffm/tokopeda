@@ -37,7 +37,7 @@
                             </ul>
                         </div>
                     </div> -->
-                    <div class="sidebar-widget mb-55">
+                   <!--  <div class="sidebar-widget mb-55">
                         <h3 class="sidebar-widget">harga</h3>
                         <div class="price_filter mr-60">
                             <div id="slider-range"></div>
@@ -49,7 +49,7 @@
                                 <button type="button">Filter</button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     
                     
                     <div class="sidebar-widget">

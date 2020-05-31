@@ -1,3 +1,4 @@
+ <?php Flasher::Flash() ?>
  <!-- Begin Page Content -->
  <div class="container-fluid">
 
@@ -38,9 +39,9 @@
                              <td>
                                  <a href="<?=BASE_URL?>/AdminPage/formUpdate/<?=$product["product_id"]?>"
                                      class="badge badge-primary">Update</a>
-                                 <a href="<?=BASE_URL?>/AdminPage/hapus/<?=$product["product_id"]?>"
+                                 <a href="<?=BASE_URL?>/AdminPage/hapusStok/<?=$product["product_id"]?>"
                                      onclick="return confirm('Yakin Untuk Dihapus ?')"
-                                     class="badge badge-danger">Hapus</a>
+                                     class="badge badge-danger">Hapus Stok</a>
                              </td>
                          </tr>
                          <?php endforeach; ?>

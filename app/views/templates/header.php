@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="<?=BASE_URL?>/assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?=BASE_URL?>/assets/css/meanmenu.min.css">
     <link rel="stylesheet" href="<?=BASE_URL?>/assets/css/bundle.css">
+    <script src="<?= BASE_URL ?>/assets/js/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="<?=BASE_URL?>/assets/css/sweetalert2.css">
     <link rel="stylesheet" href="<?=BASE_URL?>/assets/css/style.css">
     <link rel="stylesheet" href="<?=BASE_URL?>/assets/css/responsive.css">
     <script src="<?=BASE_URL?>/assets/js/vendor/modernizr-2.8.3.min.js"></script>

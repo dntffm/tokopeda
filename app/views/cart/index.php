@@ -47,8 +47,9 @@
                                     </td>
                                     <td class="product-quantity">
                                         <div class="quantity-range">                    
-                                                <input class="input-text qty text" name="qty[]" type="number" step="1" min="0" value="<?=$product["qty"]?>" size="4">
+                                                <input class="input-text cart-plus-minus-box qty text" name="qty[]" type="number" min="1" max="<?=$product["stock"]?>" value="<?=$product["qty"]?>" size="4">
                                         </div>
+                                      
                                     </td>
                                     <td class="product-price"><span class="amount"><?=$product["weight"]?> KG</span>
                                     <td class="product-subtotal">Rp.
@@ -98,6 +99,7 @@
                         <div class="update-checkout-cart">
                             <div class="update-cart">
                                 <button type="submit" name="update" class="btn-style cr-btn"><span>update</span></button>
+                                
                             </div>
                             <div class="update-cart">
                                 <?php if(isset($_SESSION["cart"])) : ?>
