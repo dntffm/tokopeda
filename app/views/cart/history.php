@@ -20,6 +20,8 @@
                                 <?php
                                     if(isset($data)) {
                                     foreach($data as $order) : ?>
+                                   
+                                    
                                 <tr>
                                     <td><?=$order["nm_penerima"]?></td>
                                     <td><?=$order["product_name"]?></td>
@@ -37,7 +39,7 @@
                                         <?php if($order["status_order"] == "paid" || $order["status_order"] == "delivered") : ?>
                                             <a href="<?=BASE_URL?>/cart/ubahstatusorder/<?=$order["id_order"]?>/done" class="btn btn-warning text-light">Terima Barang</a>
                                         <?php endif; ?>
-                                        <a href="<?=BASE_URL?>/cart/invoice/<?=$order["id_order"]?>" class="btn btn-primary text-light">lihat invoice</a>
+                                        <a href="<?=BASE_URL?>/cart/invoice/<?=$order["id_order"]."/".$order["id_customer"]?>" class="btn btn-primary text-light">lihat invoice</a>
                                     </td>
                                 </tr>
                                 <?php 

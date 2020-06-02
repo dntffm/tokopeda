@@ -20,6 +20,31 @@
   <div class="card-body">
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
+        <div class="row">
+          <div class="col-md-1">
+          <form action="" method="post">
+            <label for="filterByTime">Filter: </label>
+            <select name="filterByTime" id="filterByTime" class="custom-select custom-select-sm form-control form-control-sm">
+            <?php if(isset($_SESSION["selected"])){
+                  
+            ?>
+              <option value="all" <?= ($_SESSION["selected"] == 'all') ? "selected" : ''; ?>>all</option>
+              <option value="daily" <?= ($_SESSION["selected"] == 'daily') ? "selected" : ''; ?>>daily</option>
+              <option value="monthly" <?= ($_SESSION["selected"] == 'monthly') ? "selected" : ''; ?>>monthly</option>
+              <option value="annual" <?= ($_SESSION["selected"] == 'annual') ? "selected" : ''; ?>>annual</option>
+                  <?php } else { ?>
+                    <option value="all">all</option>
+                    <option value="daily">daily</option>
+                    <option value="monthly">monthly</option>
+                    <option value="annual">annual</option>
+                  <?php } ?>
+            </select> 
+            <button type="submit" class="btn btn-primary mt-2">Filter</button>
+          </form>
+            
+          </div>
+        </div>
+        <hr>
         <thead>
           <tr>
             <th>#</th>
@@ -32,7 +57,7 @@
             <th>Aksi</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="contentBody">
           <?php 
             if(isset($data)) {
             $no = 1; 

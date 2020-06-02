@@ -124,8 +124,9 @@ class Cart extends Controller{
         $this->view("templates/footer");
     }
     
-    public function invoice($id){
-        $data = $this->model("Order_model")->getOrderListById($id);
+    public function invoice($id,$idcust){
+        $data["orderlist"] = $this->model("Order_model")->getOrderListById($id);
+        $data["customer"] = $this->model("Order_model")->getCustomerUsername($idcust);
         $this->view("cart/invoice",$data);
     }
 

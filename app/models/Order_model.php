@@ -83,6 +83,25 @@ class Order_model{
 
     }
 
+    public function getOrderByDay($date){
+        $query = "SELECT * FROM orderlist WHERE day(od_created_at) = $date";
+        $this->db->query($query);
+
+        return $this->db->resultSet();
+    }
+    public function getOrderByMonth($date){
+        $query = "SELECT * FROM orderlist WHERE month(od_created_at) = $date";
+        $this->db->query($query);
+
+        return $this->db->resultSet();
+    }
+    public function getOrderByYear($date){
+        $query = "SELECT * FROM orderlist WHERE year(od_created_at) = $date";
+        $this->db->query($query);
+
+        return $this->db->resultSet();
+    }
+
     public function getOrderListByUser($id){
         $query = "SELECT * FROM orderlist WHERE id_customer=:id_customer";
         $this->db->query($query);
@@ -107,5 +126,13 @@ class Order_model{
         $this->db->execute();
 
         return $this->db->rowCount();
+    }
+    public function getCustomerUsername($id){
+        $query = "SELECT cust_uname FROM customer WHERE cust_id=:cust_id";
+        $this->db->query($query);
+        $this->db->bind("cust_id",$id);
+        $this->db->execute();
+
+        return $this->db->single();
     }
 }

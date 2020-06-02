@@ -34,7 +34,7 @@
                                                     $price = (int) $price;
                                                     $totalPerProduct = number_format($product["qty"] * $price,0,".",".");
                                                     $quantity += $product["qty"];
-                                                    $weights += $product["weight"];
+                                                    $weights += ($product["weight"] * $product["qty"]);
                                                 ?>
                                 <tr>
                                     <td class="product-thumbnail">

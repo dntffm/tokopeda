@@ -2,13 +2,13 @@
     
 ?>
 
-<div class="breadcrumb-area pt-255 pb-170" style="background-image: url(assets/img/banner/banner-4.jpg)">
+<div class="breadcrumb-area pt-255 pb-170" style="background-image: url(<?=BASE_URL?>/assets/img/banner/banner-1.jpg)">
     <div class="container-fluid">
         <div class="breadcrumb-content text-center">
             <h2></h2>
             <ul>
                 <li>
-                    <a href="#">home</a>
+                    <a href="<?=BASE_URL?>">home</a>
                 </li>
                 <li>Produk</li>
             </ul>

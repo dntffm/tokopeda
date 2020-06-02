@@ -25,7 +25,11 @@
     <link rel="stylesheet" href="<?=BASE_URL?>/assets/css/style.css">
     <link rel="stylesheet" href="<?=BASE_URL?>/assets/css/responsive.css">
     <script src="<?=BASE_URL?>/assets/js/vendor/modernizr-2.8.3.min.js"></script>
-
+    <style>
+       /*  *{
+            border: 1px solid red;
+        } */
+    </style>
 </head>
 
 <body>
@@ -81,26 +85,22 @@
                                             <?php
                                                         }
                                                     ?>
-
                                         </nav>
                                     </div>
                                 </div>
                             </div>
                             <?php
                                         if(isset($_SESSION["isauth"])) :
-                                            if($_SESSION["isauth"] == true) :
-                                    
+                                            if($_SESSION["isauth"] == true) :              
                                     ?>
                             <div class="header-cart cart-small-device">
                                 <button class="icon-cart">
                                     <i class="ti-shopping-cart"></i>
-
                                     <span class="count-style">
                                         <?php 
-                                                    $retVal = empty($_SESSION["cart"]) ? 0 : count($_SESSION["cart"]) ;
-                                                    echo $retVal;
-                                                
-                                                ?>
+                                            $retVal = empty($_SESSION["cart"]) ? 0 : count($_SESSION["cart"]) ;
+                                            echo $retVal;        
+                                        ?>
                                     </span>
 
                                 </button>
@@ -108,9 +108,8 @@
                                     <ul>
                                         <?php if(isset($_SESSION["cart"])) : ?>
                                         <?php 
-                                                    foreach ($_SESSION["cart"] as $product) : ?>
-
-
+                                            foreach ($_SESSION["cart"] as $product) : 
+                                        ?>
                                         <li class="single-shopping-cart">
                                             <div class="shopping-cart-title">
                                                 <h3><a href="#"><?=$product["product_name"]?></a></h3>
@@ -128,7 +127,6 @@
 
                                     <div class="shopping-cart-btn">
                                         <a class="btn-style cr-btn" href="<?=BASE_URL?>/cart">Ke Keranjang Belanja</a>
-                                        <a class="btn-style cr-btn" href="<?=BASE_URL?>/checkout">checkout</a>
                                     </div>
                                 </div>
                             </div>
@@ -155,17 +153,17 @@
                             <i class="ti-shopping-cart"></i>
                             <span class="count-style">
                                 <?php 
-                                                    $retVal = empty($_SESSION["cart"]) ? 0 : count($_SESSION["cart"]) ;
-                                                    echo $retVal;
-                                                
-                                                ?>
+                                    $retVal = empty($_SESSION["cart"]) ? 0 : count($_SESSION["cart"]) ;
+                                    echo $retVal;
+                                ?>
                             </span>
                         </button>
                         <div class="shopping-cart-content">
                             <ul>
                                 <?php if(isset($_SESSION["cart"])) : ?>
                                 <?php 
-                                                    foreach ($_SESSION["cart"] as $product) : ?>
+                                    foreach ($_SESSION["cart"] as $product) :
+                                 ?>
 
 
                                 <li class="single-shopping-cart">
@@ -191,10 +189,19 @@
                         </div>
                     </div>
                 </div>
+               
+                <div class="header-cart-wrapper-user">
+                    <div class="header-cart">
+                        <button class="icon-cart" style="background-color:white;">
+                            <i class="fa fa-user"></i>
+                            <span style="margin-left:10px"><?=$_SESSION["username"]?></span>
+                        </button>
+                    </div>
+                </div>
                 <?php 
-                                        endif;
-                                        endif; 
-
-                                    ?>
+                    endif;
+                    endif;
+                ?>
             </div>
+                                        
         </header>

@@ -12,6 +12,19 @@ class Produk_model{
        $this->db->query("SELECT COUNT(*) FROM ".$this->table);
        return $this->db->single();
     }
+    public function countSoldProductDaily($day,$month,$year){
+        
+       $this->db->query("SELECT COUNT(*) FROM orderlist WHERE day(od_created_at) = $day AND month(od_created_at) = $month AND year(od_created_at) = $year");
+       return $this->db->single();
+    }
+    public function countSoldProductMonthly($month,$year){
+       $this->db->query("SELECT COUNT(*) FROM orderlist WHERE month(od_created_at) = $month AND year(od_created_at) = $year");
+       return $this->db->single();
+    }
+    public function countSoldProductAnnual($year){
+       $this->db->query("SELECT COUNT(*) FROM orderlist WHERE year(od_created_at) = $year");
+       return $this->db->single();
+    }
 
     public function getAllProducts(){
         $this->db->query("SELECT * FROM ".$this->table);
@@ -99,5 +112,6 @@ class Produk_model{
 
         return $this->db->rowCount();
     }
+
 
 }

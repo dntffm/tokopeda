@@ -24,7 +24,7 @@
             <div class="col-lg-6">
                 <div class="product-details-content">
                     <h2><?=$data["product"]["product_name"]?></h2>
-                    
+                    <p>Stok : <?=$data["product"]["stock"]?></p>
                     <div class="product-price">
                         <span style="color:black">Rp.<?=$data["product"]["product_price"]?></span>
                     </div>

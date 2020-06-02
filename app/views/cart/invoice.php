@@ -122,8 +122,8 @@
                             </td>
                             
                             <td>
-                                Invoice #: <?=$data[0]["id_order"]?><br>
-                                Tanggal Beli: <?=$data[0]["od_created_at"]?><br>
+                                Invoice #: <?=$data["orderlist"][0]["id_order"]?><br>
+                                Tanggal Beli: <?=Datetime::createFromFormat('Y-m-d H:i:s',$data["orderlist"][0]["od_created_at"])->format("d/m/Y H:i:s")?><br>
                                 
                             </td>
                         </tr>
@@ -138,19 +138,21 @@
                             
                             
                             <td>
+                                <strong>Nama Akun: </strong>
+                                <?=$data["customer"]["cust_uname"]?><br>
                                 <strong>Nama penerima: </strong>
-                                <?=$data[0]["nm_penerima"]?><br>
+                                <?=$data["orderlist"][0]["nm_penerima"]?><br>
                                 <strong>Alamat penerima:</strong>
-                                <?=$data[0]["dst_city"].",".$data[0]["dst_province"].','.$data[0]["postal_code"]?><br>
+                                <?=$data["orderlist"][0]["dst_city"].",".$data["orderlist"][0]["dst_province"].','.$data["orderlist"][0]["postal_code"]?><br>
                                 <strong>Nomer HP: </strong>
-                                <?=$data[0]["phone"]?>
+                                <?=$data["orderlist"][0]["phone"]?>
                             </td>
 
                             <td>
                                 <strong>ID Order: </strong>
-                                <?=$data[0]["id_order"]?><br>
+                                <?=$data["orderlist"][0]["id_order"]?><br>
                                 <strong>Jasa Kirim: </strong>
-                                <?=$data[0]["courier"]?>
+                                <?=$data["orderlist"][0]["courier"]?>
                             </td>
                         </tr>
                     </table>
@@ -187,7 +189,7 @@
                 </td>
             </tr>
             
-            <?php $total = 0; foreach($data as $item) : $total+=((int) str_replace(".",'',$item["product_price"]) * $item["kuantitas"])?>
+            <?php $total = 0; foreach($data["orderlist"] as $item) : $total+=((int) str_replace(".",'',$item["product_price"]) * $item["kuantitas"])?>
             <tr class="item">
                 <td>
                     <?=$item["product_name"]." (x".$item["kuantitas"].")"?>

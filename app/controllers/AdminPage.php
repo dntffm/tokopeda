@@ -3,6 +3,15 @@
 class AdminPage extends Controller{
     public function index(){
         $data["jmlproduk"] = $this->model("Produk_model")->countProduct();
+        $date = [
+            'day' => date("d"),
+            'month' =>date('m'),
+            'year' => date('Y')
+        ];
+        $data["dailyProduct"] = $this->model("Produk_model")->countSoldProductDaily($date["day"],$date["month"],$date["year"]);
+        $data["monthlyProduct"] = $this->model("Produk_model")->countSoldProductMonthly($date["month"],$date["year"]);
+        $data["annualProduct"] = $this->model("Produk_model")->countSoldProductAnnual($date["year"]);
+
         $this->view("templates/admin-header");
         $this->view("admin-page/index",$data);
         $this->view("templates/admin-footer");
@@ -40,6 +49,31 @@ class AdminPage extends Controller{
 
     public function LaporanPenjualan(){
         $data = $this->model("Order_model")->getOrder();
+
+        if(isset($_POST["filterByTime"])){
+            $request = $_POST["filterByTime"];
+            $date = [
+                'day' => date("d"),
+                'month' =>date('m'),
+                'year' => date('Y')
+            ];
+            if($request == "daily"){
+                $_SESSION["selected"] = 'daily';
+                $data = $this->model("Order_model")->getOrderByDay($date["day"]);
+            } else if($request == "monthly") {
+                $_SESSION["selected"] = 'monthly';
+                $data = $this->model("Order_model")->getOrderByMonth($date["month"]);
+            } else if($request == "annual") {
+                $_SESSION["selected"] = 'annual';
+                $data = $this->model("Order_model")->getOrderByYear($date["year"]);
+            } else {
+                $_SESSION["selected"] = 'all';
+                $data = $this->model("Order_model")->getOrder();;
+            }
+
+           
+        }
+
         $this->view("templates/admin-header");
         $this->view("admin-page/laporanJual",$data);
         $this->view("templates/admin-footer");
@@ -112,5 +146,6 @@ class AdminPage extends Controller{
             header("Location: ".BASE_URL."/adminpage/laporanpenjualan");
         }
     }
-   
+    
+ 
 }

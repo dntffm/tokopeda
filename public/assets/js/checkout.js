@@ -27,7 +27,7 @@ $(document).ready(function(){
                 json = JSON.parse(data);
                 cost = json["rajaongkir"]["results"][0]["costs"][0]["cost"][0]["value"];
                 cost = parseFloat(cost) * parseFloat(berat);
-                console.log(cost);
+               
                 subtotal = $("#subtotal").text().replace("Rp","").replace(".","").split(".").join("");  
                 subtotal = parseFloat(subtotal);
                 total = cost+subtotal;

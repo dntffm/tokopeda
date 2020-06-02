@@ -1,10 +1,10 @@
 <?php
-    
-    $totalBerat = 0;
-    for ($i=0; $i < count($_SESSION["cart"]) ; $i++) { 
-        $totalBerat += $_SESSION["cart"][$i]["weight"] * $_SESSION["cart"][$i]["qty"];
+    if(isset($_SESSION["cart"])) {
+        $totalBerat = 0;
+        for ($i=0; $i < count($_SESSION["cart"]) ; $i++) { 
+            $totalBerat += $_SESSION["cart"][$i]["weight"] * $_SESSION["cart"][$i]["qty"];
+        }
     }
-
 ?>
 <!-- checkout-area start -->
 <form action="<?=BASE_URL?>/cart/proceedorder" method="post">
@@ -30,13 +30,16 @@
                                         <label>Provinsi<span class="required">*</span></label>
                                         <select id="provinsi" name="provinsi">
 
-                                            <?php
-                                        echo "<option>Pilih Provinsi</option>";
-                                            for ($i=0; $i < count($data['provinsi']); $i++) { ?>
-                                            <option value="<?=$data['provinsi'][$i]['province_id']?>">
-                                                <?=$data['provinsi'][$i]['province']?></option>
-                                            <?php
+                                        <?php
+                                            if(isset($data["provinsi"])){
+                                                echo "<option>Pilih Provinsi</option>";
+                                                for ($i=0; $i < count($data['provinsi']); $i++) { ?>
+                                                <option value="<?=$data['provinsi'][$i]['province_id']?>">
+                                                    <?=$data['provinsi'][$i]['province']?></option>
+                                                <?php
+                                                }
                                             }
+                                            
                                         ?>
                                         </select>
                                     </div>
@@ -110,11 +113,12 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                $subtotal = 0; 
-                                foreach ($_SESSION["cart"] as $product) :  
-                                    $price = $product["product_price"];
-                                    $price = str_replace('.','',$price);
-                                    $price = (int) $price * $product["qty"];
+                                    if(isset($_SESSION["cart"])) {
+                                        $subtotal = 0; 
+                                        foreach ($_SESSION["cart"] as $product) :  
+                                            $price = $product["product_price"];
+                                            $price = str_replace('.','',$price);
+                                            $price = (int) $price * $product["qty"];
                             ?>
 
                                     <tr class="cart_item">
@@ -126,7 +130,11 @@
                                             <span class="amount">Rp.<?=$product["product_price"]?></span>
                                         </td>
                                     </tr>
-                                    <?php $subtotal+=$price; endforeach; ?>
+                                    <?php 
+                                        $subtotal+=$price; 
+                                        endforeach; 
+                                    }
+                                    ?>
                                 </tbody>
                                 <tfoot>
                                     <tr class="cart-subtotal">
