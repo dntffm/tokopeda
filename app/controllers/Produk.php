@@ -4,6 +4,7 @@ class Produk extends Controller{
     public function index(){
         $data["sepeda"] = $this->model("Produk_model")->getProductSepeda();
         $data["asesoris"] = $this->model("Produk_model")->getProductAsesoris();
+        $data["bestsell"] = $this->model("Produk_model")->getProdukBestSell();
         $this->view("templates/header");
         $this->view("produk/index",$data);
         $this->view("templates/footer");

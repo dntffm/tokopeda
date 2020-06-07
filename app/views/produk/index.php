@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="product-sidebar-area pr-60">
-                    <div class="sidebar-widget pb-55">
+                   <!--  <div class="sidebar-widget pb-55">
                         <h3 class="sidebar-widget">Search Products</h3>
                         <div class="sidebar-search">
                             <form action="#">
@@ -28,7 +28,7 @@
                                 <button><i class="ti-search"></i></button>
                             </form>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- <div class="sidebar-widget pb-50">
                         <h3 class="sidebar-widget">Kategori</h3>
                         <div class="widget-categories">
@@ -55,16 +55,18 @@
                     <div class="sidebar-widget">
                         <h3 class="sidebar-widget">best seller</h3>
                         <div class="best-seller">
+                            <?php foreach($data["bestsell"] as $product):?>
                             <div class="single-best-seller">
                                 <div class="best-seller-img">
-                                    <a href="#"><img src="assets/img/Gunung/4.jpg" alt=""
+                                    <a href="#"><img src="<?=BASE_URL?>/assets/img/product/<?=$product["product_image"]?>" alt=""
                                             style="width:100px; height:100px"></a>
                                 </div>
                                 <div class="best-seller-text">
-                                    <h3><a href="#">-</a></h3>
-                                    <span></span>
+                                    <h3><a href="#"><?=$product["product_name"]?></a></h3>
+                                    <span><?=$product["product_price"]?></span>
                                 </div>
                             </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>

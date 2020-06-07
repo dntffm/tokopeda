@@ -57,9 +57,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="deskripsi">Deskripsi Produk</label>
-                                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" style="text-align:left">
-                                    <?=$data["product"]["description"]?>
-                                </textarea>
+                                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" style="text-align:left"><?=$data["product"]["description"]?></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Simpan</button>
                             <a href="<?=BASE_URL?>/AdminPage/edit" class="btn btn-info">Kembali</a>

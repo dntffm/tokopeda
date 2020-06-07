@@ -40,7 +40,7 @@ class AdminPage extends Controller{
                             
            }
         } else{
-            $_SESSION["loginfail"] = true;
+            Flasher::setFlash("error","Login Gagal","Username atau password salah");
             header("Location: ".BASE_URL."/AdminPage/login");
             
         }

@@ -47,6 +47,11 @@ class Produk_model{
         return $this->db->single();
     }
 
+    public function getProdukBestSell(){
+        $query = "SELECT id_barang,product_name,product_price,product_image,SUM(kuantitas) FROM `orderlist` GROUP BY id_barang ORDER BY SUM(kuantitas) desc LIMIT 5";
+        $this->db->query($query);
+        return $this->db->resultSet();
+    }
     public function tambahProduk($data){
         
         $query = "INSERT INTO product

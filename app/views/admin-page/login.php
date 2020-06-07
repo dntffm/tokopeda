@@ -14,7 +14,8 @@
   <!-- Custom fonts for this template-->
   <link href="<?=BASE_URL?>/admin-page/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  <script src="<?= BASE_URL ?>/assets/js/sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="<?=BASE_URL?>/assets/css/sweetalert2.css">
   <!-- Custom styles for this template-->
   <link href="<?=BASE_URL?>/admin-page/assets/css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -41,22 +42,7 @@
                     
                   </div>
                   <?php
-                    if(isset($_SESSION["loginfail"])){
-                      $auth = $_SESSION["loginfail"];
-                      if($auth){
-                        echo '
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                           Username atau Password Salah!!
-                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                           <span aria-hidden="true">&times;</span>
-                         </button>
-                        </div>
-                        ';
-  
-                        session_destroy();
-                      }
-                    }
-                    
+                    Flasher::Flash();
                   ?>
                   <form action="<?=BASE_URL?>/AdminPage/userAuth" method="POST" class="user">
                     <div class="form-group">
@@ -65,21 +51,14 @@
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
                     </div>
-                    <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Ingat Saya</label>
-                      </div>
-                    </div>
+
                     <button type="submit" name="submit" class="btn btn-primary btn-user btn-block">
                       Login
                     </button>
                     <hr>
                   </form>
                   
-                  <div class="text-center">
-                    <a class="small" href="forgot-password.html">Lupa Password</a>
-                  </div>
+                  
                 </div>
               </div>
             </div>

@@ -18,7 +18,6 @@
                             <div class="overview-content">
                                 <h1><span>TokoPeda</span> TOKO SEPEDA </h1>
                                 <h2><span>TERKEMUKA DI INDONESIA</span></h2>
-                                <p><span>OSWAN</span> the most latgest bike store in the wold can serve you latest            qulity of motorcycle also you can sell here your motorcycle it quo minus iduod maxie placeat facere possimus, omnis voluptas assumenda est, omnis dolor llendus. Temporibus autem quibusdam </p>
                                 <div class="question-area">
                                     <h4>HAVE ANY QUESTION? </h4>
                                     <div class="question-contact">

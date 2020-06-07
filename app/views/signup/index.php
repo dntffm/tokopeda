@@ -23,9 +23,9 @@
                                         <input type="password" name="user-password" placeholder="Password">
                                         <div class="button-box">
                                             <div class="login-toggle-btn">
-                                                <input type="checkbox">
-                                                <label>Ingat Saya</label>
-                                                <a href="#">Lupa Password</a>
+                                                
+                                                
+                                                <a href="<?=BASE_URL?>/AdminPage">Login untuk Admin</a>
                                             </div>
                                             <button type="submit" name="login" class="btn-style cr-btn"><span>Login</span></button>
                                         </div>

@@ -27,7 +27,7 @@
   <!-- Custom styles for this template-->
   <link href="<?=BASE_URL?>/admin-page/assets/css/sb-admin-2.min.css" rel="stylesheet">
   <script src="<?= BASE_URL ?>/assets/js/sweetalert2.min.js"></script>
-    <link rel="stylesheet" href="<?=BASE_URL?>/assets/css/sweetalert2.css">
+  <link rel="stylesheet" href="<?=BASE_URL?>/assets/css/sweetalert2.css">
 </head>
 
 <body id="page-top">

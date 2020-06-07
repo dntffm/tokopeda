@@ -28,15 +28,15 @@
             <?php if(isset($_SESSION["selected"])){
                   
             ?>
-              <option value="all" <?= ($_SESSION["selected"] == 'all') ? "selected" : ''; ?>>all</option>
-              <option value="daily" <?= ($_SESSION["selected"] == 'daily') ? "selected" : ''; ?>>daily</option>
-              <option value="monthly" <?= ($_SESSION["selected"] == 'monthly') ? "selected" : ''; ?>>monthly</option>
-              <option value="annual" <?= ($_SESSION["selected"] == 'annual') ? "selected" : ''; ?>>annual</option>
+              <option value="all" <?= ($_SESSION["selected"] == 'all') ? "selected" : ''; ?>>Semua</option>
+              <option value="daily" <?= ($_SESSION["selected"] == 'daily') ? "selected" : ''; ?>>Harian</option>
+              <option value="monthly" <?= ($_SESSION["selected"] == 'monthly') ? "selected" : ''; ?>>Bulanan</option>
+              <option value="annual" <?= ($_SESSION["selected"] == 'annual') ? "selected" : ''; ?>>Tahunan</option>
                   <?php } else { ?>
-                    <option value="all">all</option>
-                    <option value="daily">daily</option>
-                    <option value="monthly">monthly</option>
-                    <option value="annual">annual</option>
+                    <option value="all">Semua</option>
+                    <option value="daily">Harian</option>
+                    <option value="monthly">Bulanan</option>
+                    <option value="annual">Tahunan</option>
                   <?php } ?>
             </select> 
             <button type="submit" class="btn btn-primary mt-2">Filter</button>
