@@ -117,12 +117,13 @@ class Order_model{
 
         return $this->db->resultSet();
     }
+  
     public function ubahStatus($id,$status){
-        $query = "UPDATE orders SET status_order=:status_order WHERE id_order=:id_order";
+        $query = "UPDATE order_detail SET status_order_dtl=:status_order_dtl WHERE id_orderdetail=:id_orderdetail";
 
         $this->db->query($query);
-        $this->db->bind("id_order",$id);
-        $this->db->bind("status_order",$status);
+        $this->db->bind("id_orderdetail",$id);
+        $this->db->bind("status_order_dtl",$status);
         $this->db->execute();
 
         return $this->db->rowCount();

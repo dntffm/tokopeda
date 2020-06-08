@@ -34,10 +34,10 @@
                                             echo "Rp. ".number_format($qty * $harga,0,'.','.');
                                         ?>
                                     </td>
-                                    <td><?=$order["status_order"]?></td>
+                                    <td><?=$order["status_order_dtl"]?></td>
                                     <td>
-                                        <?php if($order["status_order"] == "paid" || $order["status_order"] == "delivered") : ?>
-                                            <a href="<?=BASE_URL?>/cart/ubahstatusorder/<?=$order["id_order"]?>/done" class="btn btn-warning text-light">Terima Barang</a>
+                                        <?php if($order["status_order_dtl"] == "dibayar" || $order["status_order_dtl"] == "dikirim") : ?>
+                                            <a href="<?=BASE_URL?>/cart/ubahstatusorder/<?=$order["id_orderdetail"]?>/diterima" class="btn btn-warning text-light">Terima Barang</a>
                                         <?php endif; ?>
                                         <a href="<?=BASE_URL?>/cart/invoice/<?=$order["id_order"]."/".$order["id_customer"]?>" class="btn btn-primary text-light">lihat invoice</a>
                                     </td>
@@ -57,3 +57,8 @@
             </div>
         </div>
     </div>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>

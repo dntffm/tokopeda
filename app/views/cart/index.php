@@ -109,7 +109,7 @@
                                 <?php endif; ?>
                             </div>
                         </div>
-                    </div>
+                    </div><hr><hr>
                 </div>
             </div>
         </div>

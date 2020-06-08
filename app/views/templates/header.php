@@ -190,11 +190,11 @@
                     </div>
                 </div>
                
-                <div class="header-cart-wrapper-user">
+                <div class="header-cart-wrapper-user" alt="dsds">
                     <div class="header-cart">
                         <button class="icon-cart" style="background-color:white;">
                             <i class="fa fa-user"></i>
-                            <span style="margin-left:10px"><?=$_SESSION["username"]?></span>
+                            <span style="margin-left:10px"><?=substr( $_SESSION["username"],0,5)?></span>
                         </button>
                     </div>
                 </div>

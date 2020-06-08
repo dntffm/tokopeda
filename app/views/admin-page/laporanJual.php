@@ -72,14 +72,17 @@
             <td><?=$order["product_name"]?></td>
             <td><?=$order["kuantitas"]?></td>
             <td>Rp. <?=number_format($total,0,'.','.')?></td>
-            <td><?=$order["status_order"]?></td>
+            <td><?=$order["status_order_dtl"]?></td>
             <td>
-              <?php if($order["status_order"] == "paid") { ?>
-                <a href="<?=BASE_URL?>/Adminpage/ubahstatusorder/<?=$order["id_order"]?>" class="btn btn-danger" > 
+              <?php if($order["status_order_dtl"] == "dibayar") { ?>
+                <a href="<?=BASE_URL?>/Adminpage/ubahstatusorder/<?=$order["id_orderdetail"]?>/dikirim" class="btn btn-danger" > 
                   Kirim Barang
                 </a>
-              <?php } if($order["status_order"] == "done"){ ?>
+              <?php } if($order["status_order_dtl"] == "diterima"){ ?>
                 <p>Barang sudah diterima</p>
+              <?php } ?>
+              <?php  if($order["status_order_dtl"] == "dikirim"){ ?>
+                <p>Barang sudah dikirim</p>
               <?php } ?>
             </td>
           </tr>

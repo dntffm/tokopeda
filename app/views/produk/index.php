@@ -58,11 +58,11 @@
                             <?php foreach($data["bestsell"] as $product):?>
                             <div class="single-best-seller">
                                 <div class="best-seller-img">
-                                    <a href="#"><img src="<?=BASE_URL?>/assets/img/product/<?=$product["product_image"]?>" alt=""
+                                    <a href="<?=BASE_URL?>/produk/produk_detail/<?=$product["id_barang"]?>"><img src="<?=BASE_URL?>/assets/img/product/<?=$product["product_image"]?>" alt=""
                                             style="width:100px; height:100px"></a>
                                 </div>
                                 <div class="best-seller-text">
-                                    <h3><a href="#"><?=$product["product_name"]?></a></h3>
+                                    <h3><a href="<?=BASE_URL?>/produk/produk_detail/<?=$product["id_barang"]?>"><?=$product["product_name"]?></a></h3>
                                     <span><?=$product["product_price"]?></span>
                                 </div>
                             </div>
