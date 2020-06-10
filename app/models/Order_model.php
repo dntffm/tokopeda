@@ -43,7 +43,7 @@ class Order_model{
 
     public function insertOrderDetail($id){
         $query = "INSERT INTO order_detail
-                    VALUES('',:id_order_od,:id_barang,:kuantitas)
+                    VALUES('',:id_order_od,:id_barang,:kuantitas,:status_order_dtl)
             ";
 
         $this->db->query($query);
@@ -54,6 +54,7 @@ class Order_model{
             $this->db->bind("id_order_od",$id);
             $this->db->bind("id_barang",$_SESSION["cart"][$i]["product_id"]);
             $this->db->bind("kuantitas",$_SESSION["cart"][$i]["qty"]);
+            $this->db->bind("status_order_dtl","dibayar");
             $this->db->execute();
         }
 

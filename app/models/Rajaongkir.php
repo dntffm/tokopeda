@@ -25,6 +25,7 @@ class Rajaongkir{
 
         if ($err) {
         echo "cURL Error #:" . $err;
+        echo "harap Refresh Halaman";
         } else {
             $prov = json_decode($response,true);
             return $prov["rajaongkir"]["results"];
@@ -57,6 +58,7 @@ class Rajaongkir{
 
         if ($err) {
         echo "cURL Error #:" . $err;
+        echo "harap Refresh Halaman";
         } else {
             $data = json_decode($response,true);
             return $data["rajaongkir"]["results"];
@@ -86,6 +88,7 @@ class Rajaongkir{
 
         if ($err) {
         echo "cURL Error #:" . $err;
+        echo "harap Refresh Halaman";
         } else {
             echo "<option>Pilih Kota Tujuan</option>";
             $data = json_decode($response, true);
@@ -121,6 +124,7 @@ class Rajaongkir{
 
         if ($err) {
         echo "cURL Error #:" . $err;
+        echo "harap Refresh Halaman";
         } else {
             echo $response;
         }
