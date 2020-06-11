@@ -108,6 +108,7 @@
                                                 <?php endforeach; ?>
                                             </ul>
                                         </div>
+                                        <?php if( $product["stock"] > 0) { ?>
                                         <div class="product-action">
                                             <a href="<?=BASE_URL?>/cart/add/<?=$product["product_id"]?>" class="action-plus-2 p-action-none" style="background-color:white;"
                                                 title="Add To Cart" href="#">
@@ -118,6 +119,7 @@
                                                 <i class=" ti-zoom-in"></i>
                                             </a>
                                         </div>
+                                        
                                         <div class="product-content-wrapper">
                                             <div class="product-title-spreed">
                                                 <h4><a href="<?=BASE_URL;?>/produk/produk_detail/<?=$product["product_id"]?>"><?=$product["product_name"]?></a>
@@ -128,6 +130,13 @@
                                                 <span><?="Rp ".$product["product_price"]?></span>
                                             </div>
                                         </div>
+                                        <?php } else { ?>
+                                            <div class="product-content-wrapper">
+                                                <div class="product-title-spreed">
+                                                    <h4>Product Habis</h4>
+                                                </div>
+                                            </div>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>

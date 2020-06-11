@@ -89,4 +89,49 @@
                     </div>
                 </div>
             </div>
-           
+            <div class="team-area pt-120 pb-95">
+                <div class="container">
+                    <div class="section-title text-center mb-60">
+                        <h2>Team Member</h2>
+                        <p>
+                            <span>TokoPeda</span>
+                            TokoSepeda Paling Terkemuka Di Indonesia
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-8 col-12">
+                            <div class="team-wrapper mb-30">
+                                <div class="team-img">
+                                    <img src="<?=BASE_URL?>/assets/img/team-member/aina.png" alt="">
+                                </div>
+                                <div class="team-content">
+                                    <h4>Qorry 'Aina Damayanti</h4>
+                                    <span>182410102010</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-8 col-12">
+                            <div class="team-wrapper mb-30">
+                                <div class="team-img">
+                                    <img src="<?=BASE_URL?>/assets/img/team-member/denta.png" alt="">
+                                </div>
+                                <div class="team-content">
+                                    <h4>Denta Firdaus Fatoni M.</h4>
+                                    <span>182410102056 </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-8 col-12">
+                            <div class="team-wrapper mb-30">
+                                <div class="team-img">
+                                    <img src="<?=BASE_URL?>/assets/img/team-member/cae.png" alt="">
+                                </div>
+                                <div class="team-content">
+                                    <h4>Caesarina Kurnia A.</h4>
+                                    <span>182410102008 </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
