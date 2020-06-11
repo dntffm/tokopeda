@@ -38,9 +38,9 @@
                             <div class="login-form-container">
                                 <div class="login-form">
                                     <form action="<?=BASE_URL?>/signup/daftar" method="post">
-                                        <input type="text" name="user-name" placeholder="Username">
-                                        <input type="password" name="user-password" placeholder="Password">
-                                        <input name="user-email" placeholder="Email" type="email">
+                                        <input type="text" name="user-name" placeholder="Username" required>
+                                        <input type="password" name="user-password" placeholder="Password" required>
+                                        <input name="user-email" placeholder="Email" type="email" required>
                                         <div class="button-box">
                                             <button type="submit" name="register" class="btn-style cr-btn"><span>Daftar</span></button>
                                         </div>

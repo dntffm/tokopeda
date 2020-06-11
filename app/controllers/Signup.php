@@ -8,13 +8,18 @@ class Signup extends Controller{
     }
 
     public function daftar(){
-        if(isset($_POST["register"])){
+        if(isset($_POST["register"]) && count($_POST) == 4){
+           
             $data["username"] = filter_input(INPUT_POST,"user-name",FILTER_SANITIZE_STRING);
             $data["password"] = password_hash($_POST["user-password"],PASSWORD_DEFAULT);
             $data["email"] = filter_input(INPUT_POST,"user-email",FILTER_VALIDATE_EMAIL);
 
             if($this->model("Login_model")->registerCustomer($data) > 0){
                 Flasher::setFlash('success','Register Sukses','Silahkan Login');
+                header("Location: ".BASE_URL."/signup");
+                exit;
+            } else{
+                Flasher::setFlash('warning','Register Gagal','Silahkan Reegistrasi Ulang');
                 header("Location: ".BASE_URL."/signup");
                 exit;
             }
