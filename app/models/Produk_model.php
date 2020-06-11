@@ -78,7 +78,7 @@ class Produk_model{
         
     }
     public function ubahProduk($data){
-
+        var_dump($data);
        
         $query = "UPDATE product SET
                     product_name = :product_name,
@@ -87,22 +87,27 @@ class Produk_model{
                     kind = :kind,
                     status = :status,
                     product_brand = :product_brand,
+                    updated_at = :updated_at,
                     description = :description,
-                    tags = :tags
+                    tags = :tags,
+                    product_image = :product_image
                 WHERE product_id = :product_id
                 ";
                 
         
         $this->db->query($query);
-        $this->db->bind("product_name",$data["nama-produk"]);
-        $this->db->bind("product_price",$data["harga-produk"]);
-        $this->db->bind("stock",$data["stock"]);
-        $this->db->bind("kind",$data["jenis-produk"]);
-        $this->db->bind("status",$data["status"]);
-        $this->db->bind("product_brand",$data["brand-produk"]);
-        $this->db->bind("description",$data["deskripsi"]);
-        $this->db->bind("tags",$data["tag"]);
-        $this->db->bind("product_id",$data["id"]);
+        $this->db->bind("product_name",$data["nongambar"]["nama-produk"]);
+        $this->db->bind("product_price",$data["nongambar"]["harga-produk"]);
+        $this->db->bind("stock",$data["nongambar"]["stock"]);
+        $this->db->bind("kind",$data["nongambar"]["jenis-produk"]);
+        $this->db->bind("status",$data["nongambar"]["status"]);
+        $this->db->bind("product_brand",$data["nongambar"]["brand-produk"]);
+        $this->db->bind("updated_at",date("Y-m-d H:i:s"));
+        $this->db->bind("description",$data["nongambar"]["deskripsi"]);
+        $this->db->bind("tags",$data["nongambar"]["tag"]);
+        $this->db->bind("product_image",$data["product_image"]);
+        $this->db->bind("product_id",$data["nongambar"]["id"]);
+     
        
         
         $this->db->execute();

@@ -14,7 +14,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-5">
-                        <form action="<?= BASE_URL ?>/AdminPage/ubah" method="POST"> 
+                        <form action="<?= BASE_URL ?>/AdminPage/ubah" method="POST" enctype="multipart/form-data"> 
                             <input type="hidden" name="id" value="<?=$data["product"]["product_id"]?>">
                             <div class="form-group">
                                 <label for="nama-produk">Nama Produk</label>
@@ -53,7 +53,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="gambar-produk">Pilih Gambar (377x488 pixel)</label>
-                                <input type="file" class="form-control-file" id="gambar-produk">
+                                <input type="file" class="form-control-file" id="gambar-produk" name="gambar-produk">
                             </div>
                             <div class="form-group">
                                 <label for="deskripsi">Deskripsi Produk</label>

@@ -97,8 +97,23 @@ class AdminPage extends Controller{
     }
 
     public function ubah(){
-        if($this->model("Produk_model")->ubahProduk($_POST) > 0){
+        $gambar = $_FILES["gambar-produk"]["tmp_name"];
+        $check = getimagesize($gambar);
+            if($check !== false){
+                $oldName = explode(".", $gambar);
+                $newName = round(microtime(true)).'.'.end($oldName);
+                $data["product_image"] = $newName;
+            } else{
+                echo "bukan gambar,upload gagal";
+            }
+        $data["nongambar"] = $_POST;
+        $data["gambar"] = $newName;
+        if($this->model("Produk_model")->ubahProduk($data) > 0){
+            move_uploaded_file($gambar,$_SERVER["DOCUMENT_ROOT"]."/tokopeda/public/assets/img/product/".$newName);
             Flasher::setFlash('success','Ubah Produk Berhasil','');
+            header("Location: ".BASE_URL."/AdminPage/edit");
+            exit;
+        } else{
             header("Location: ".BASE_URL."/AdminPage/edit");
             exit;
         }
