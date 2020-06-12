@@ -58,11 +58,11 @@
                             <?php foreach($data["bestsell"] as $product):?>
                             <div class="single-best-seller">
                                 <div class="best-seller-img">
-                                    <a href="<?=BASE_URL?>/produk/produk_detail/<?=$product["id_barang"]?>"><img src="<?=BASE_URL?>/assets/img/product/<?=$product["product_image"]?>" alt=""
+                                    <a href="<?=BASE_URL?>/Produk/produk_detail/<?=$product["id_barang"]?>"><img src="<?=BASE_URL?>/assets/img/product/<?=$product["product_image"]?>" alt=""
                                             style="width:100px; height:100px"></a>
                                 </div>
                                 <div class="best-seller-text">
-                                    <h3><a href="<?=BASE_URL?>/produk/produk_detail/<?=$product["id_barang"]?>"><?=$product["product_name"]?></a></h3>
+                                    <h3><a href="<?=BASE_URL?>/Produk/produk_detail/<?=$product["id_barang"]?>"><?=$product["product_name"]?></a></h3>
                                     <span><?=$product["product_price"]?></span>
                                 </div>
                             </div>
@@ -97,7 +97,7 @@
                             <div class="product-width col-md-6 col-xl-4 col-lg-6">
                                 <div class="product-wrapper mb-35">
                                     <div class="product-img">
-                                        <a href="<?=BASE_URL?>/produk/produk_detail/<?=$product["product_id"]?>">
+                                        <a href="<?=BASE_URL?>/Produk/produk_detail/<?=$product["product_id"]?>">
                                             <img src="<?=BASE_URL?>/assets/img/product/<?=$product["product_image"]?>"
                                                 alt="">
                                         </a>
@@ -110,19 +110,19 @@
                                         </div>
                                         <?php if( $product["stock"] > 0) { ?>
                                         <div class="product-action">
-                                            <a href="<?=BASE_URL?>/cart/add/<?=$product["product_id"]?>" class="action-plus-2 p-action-none" style="background-color:white;"
+                                            <a href="<?=BASE_URL?>/Cart/add/<?=$product["product_id"]?>" class="action-plus-2 p-action-none" style="background-color:white;"
                                                 title="Add To Cart" href="#">
                                                 <i class=" ti-shopping-cart"></i>
                                             </a>
                                             <a class="action-reload" style="background-color:white;" title="Quick View"
-                                                href="<?=BASE_URL;?>/produk/produk_detail/<?=$product["product_id"]?>">
+                                                href="<?=BASE_URL;?>/Produk/produk_detail/<?=$product["product_id"]?>">
                                                 <i class=" ti-zoom-in"></i>
                                             </a>
                                         </div>
                                         
                                         <div class="product-content-wrapper">
                                             <div class="product-title-spreed">
-                                                <h4><a href="<?=BASE_URL;?>/produk/produk_detail/<?=$product["product_id"]?>"><?=$product["product_name"]?></a>
+                                                <h4><a href="<?=BASE_URL;?>/Produk/produk_detail/<?=$product["product_id"]?>"><?=$product["product_name"]?></a>
                                                 </h4>
 
                                             </div>
@@ -153,7 +153,7 @@
                             <div class="product-width col-md-6 col-xl-4 col-lg-6">
                                 <div class="product-wrapper mb-35">
                                     <div class="product-img">
-                                        <a href="<?=BASE_URL?>/produk/produk_detail/<?=$product["product_id"]?>">
+                                        <a href="<?=BASE_URL?>/Produk/produk_detail/<?=$product["product_id"]?>">
                                             <img src="<?=BASE_URL?>/assets/img/product/<?=$product["product_image"]?>"
                                                 alt="">
                                         </a>
@@ -165,18 +165,18 @@
                                             </ul>
                                         </div>
                                         <div class="product-action">
-                                            <a href="<?=BASE_URL?>/cart/add/<?=$product["product_id"]?>" class="action-plus-2 p-action-none" style="background-color:white;"
+                                            <a href="<?=BASE_URL?>/Cart/add/<?=$product["product_id"]?>" class="action-plus-2 p-action-none" style="background-color:white;"
                                                 title="Add To Cart" href="#">
                                                 <i class=" ti-shopping-cart"></i>
                                             </a>
                                             <a class="action-reload" style="background-color:white;" title="Quick View"
-                                                href="<?=BASE_URL;?>/produk/produk_detail/<?=$product["product_id"]?>">
+                                                href="<?=BASE_URL;?>/Produk/produk_detail/<?=$product["product_id"]?>">
                                                 <i class=" ti-zoom-in"></i>
                                             </a>
                                         </div>
                                         <div class="product-content-wrapper">
                                             <div class="product-title-spreed">
-                                                <h4><a href="<?=BASE_URL;?>/produk/produk_detail/<?=$product["product_id"]?>"><?=$product["product_name"]?></a>
+                                                <h4><a href="<?=BASE_URL;?>/Produk/produk_detail/<?=$product["product_id"]?>"><?=$product["product_name"]?></a>
                                                 </h4>
 
                                             </div>

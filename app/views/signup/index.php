@@ -18,7 +18,7 @@
                         <div id="lg1" class="tab-pane active">
                             <div class="login-form-container">
                                 <div class="login-form">
-                                    <form action="<?=BASE_URL?>/signup/customerAuth" method="post">
+                                    <form action="<?=BASE_URL?>/Signup/customerAuth" method="post">
                                         <input type="text" name="user-name" placeholder="Username">
                                         <input type="password" name="user-password" placeholder="Password">
                                         <div class="button-box">
@@ -37,7 +37,7 @@
                         <div id="lg2" class="tab-pane">
                             <div class="login-form-container">
                                 <div class="login-form">
-                                    <form action="<?=BASE_URL?>/signup/daftar" method="post">
+                                    <form action="<?=BASE_URL?>/Signup/daftar" method="post">
                                         <input type="text" name="user-name" placeholder="Username" required>
                                         <input type="password" name="user-password" placeholder="Password" required>
                                         <input name="user-email" placeholder="Email" type="email" required>

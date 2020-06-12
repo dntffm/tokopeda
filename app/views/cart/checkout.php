@@ -7,7 +7,7 @@
     }
 ?>
 <!-- checkout-area start -->
-<form action="<?=BASE_URL?>/cart/proceedorder" method="post">
+<form action="<?=BASE_URL?>/Cart/proceedorder" method="post">
     <div class="checkout-area mt-5 pt-130 pb-100">
         <div class="container">
             <div class="row">

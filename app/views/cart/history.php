@@ -37,9 +37,9 @@
                                     <td><?=$order["status_order_dtl"]?></td>
                                     <td>
                                         <?php if($order["status_order_dtl"] == "dibayar" || $order["status_order_dtl"] == "dikirim") : ?>
-                                            <a href="<?=BASE_URL?>/cart/ubahstatusorder/<?=$order["id_orderdetail"]?>/diterima" class="btn btn-warning text-light">Terima Barang</a>
+                                            <a href="<?=BASE_URL?>/Cart/ubahstatusorder/<?=$order["id_orderdetail"]?>/diterima" class="btn btn-warning text-light">Terima Barang</a>
                                         <?php endif; ?>
-                                        <a href="<?=BASE_URL?>/cart/invoice/<?=$order["id_order"]."/".$order["id_customer"]?>" class="btn btn-primary text-light">lihat invoice</a>
+                                        <a href="<?=BASE_URL?>/Cart/invoice/<?=$order["id_order"]."/".$order["id_customer"]?>" class="btn btn-primary text-light">lihat invoice</a>
                                     </td>
                                 </tr>
                                 <?php 

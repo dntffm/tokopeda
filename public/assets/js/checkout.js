@@ -5,7 +5,7 @@ $(document).ready(function(){
         json = null;
         $.ajax({
             type : 'POST',
-            url : "http://localhost/tokopeda/public/cart/getKotaByProvId/",
+            url : "http://localhost/tokopeda/public/Cart/getKotaByProvId/",
             data : {idProv : idProv},
             success : function(data){
                $("#kabupaten").html(data);        
@@ -21,7 +21,7 @@ $(document).ready(function(){
         
         $.ajax({
             type : "POST",
-            url : "http://localhost/tokopeda/public/cart/getDataOngkir/",
+            url : "http://localhost/tokopeda/public/Cart/getDataOngkir/",
             data : {berat : berat,kotaTujuan : kotaTujuan, kurir : kurir},
             success : function(data){
                 json = JSON.parse(data);

@@ -4,7 +4,7 @@
   echo "</pre>"; */
 ?>
 
-<form action="<?=BASE_URL?>/cart/update" method="post">
+<form action="<?=BASE_URL?>/Cart/update" method="post">
     <div class="product-cart-area pt-120 pb-130 mt-4">
         <div class="container">
             <div class="row">
@@ -55,7 +55,7 @@
                                     <td class="product-subtotal">Rp.
                                         <?= $totalPerProduct;  ?></td>
                                     <td class="product-cart-icon product-subtotal">
-                                        <a href="<?=BASE_URL?>/cart/delete/<?=$product["product_id"]?>" onclick="return confirm('Yakin Untuk Hapus ?')"><i class="ti-trash"></i></a>
+                                        <a href="<?=BASE_URL?>/Cart/delete/<?=$product["product_id"]?>" onclick="return confirm('Yakin Untuk Hapus ?')"><i class="ti-trash"></i></a>
                                     </td>
                                 </tr>
                                 <?php
@@ -88,10 +88,10 @@
                 <div class="col-md-12">
                     <div class="cart-shiping-update">
                         <div class="cart-shipping">
-                        <a class="btn-style cr-btn" href="<?=BASE_URL?>/cart/history">
+                        <a class="btn-style cr-btn" href="<?=BASE_URL?>/Cart/history">
                                 <span>Riwayat Belanja</span>
                             </a>
-                            <a class="btn-style cr-btn" href="<?=BASE_URL?>/produk">
+                            <a class="btn-style cr-btn" href="<?=BASE_URL?>/Produk">
                                 <span>Lanjut Belanja</span>
                             </a>
                             

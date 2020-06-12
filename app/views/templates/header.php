@@ -65,8 +65,8 @@
                                                 <li><a href="<?=BASE_URL;?>">Beranda</a></li>
                                                 <li class="active"><a href="<?=BASE_URL?>/tentang">Tentang Kami </a>
                                                 </li>
-                                                <li><a href="<?=BASE_URL?>/produk">Produk</a></li>
-                                                <li><a href="<?=BASE_URL?>/signup/logout">Logout</a></li>
+                                                <li><a href="<?=BASE_URL?>/Produk">Produk</a></li>
+                                                <li><a href="<?=BASE_URL?>/Signup/logout">Logout</a></li>
 
                                             </ul>
                                             <?php
@@ -76,10 +76,10 @@
                                                     ?>
                                             <ul>
                                                 <li><a href="<?=BASE_URL;?>">Beranda</a></li>
-                                                <li class="active"><a href="<?=BASE_URL?>/tentang">Tentang Kami </a>
+                                                <li class="active"><a href="<?=BASE_URL?>/Tentang">Tentang Kami </a>
                                                 </li>
-                                                <li><a href="<?=BASE_URL?>/produk">Produk</a></li>
-                                                <li><a href="<?=BASE_URL?>/signup">Login</a></li>
+                                                <li><a href="<?=BASE_URL?>/Produk">Produk</a></li>
+                                                <li><a href="<?=BASE_URL?>/Signup">Login</a></li>
 
                                             </ul>
                                             <?php
@@ -126,7 +126,7 @@
                                     </ul>
 
                                     <div class="shopping-cart-btn">
-                                        <a class="btn-style cr-btn" href="<?=BASE_URL?>/cart">Ke Keranjang Belanja</a>
+                                        <a class="btn-style cr-btn" href="<?=BASE_URL?>/Cart">Ke Keranjang Belanja</a>
                                     </div>
                                 </div>
                             </div>
@@ -136,9 +136,9 @@
                                 <nav id="mobile-menu-active">
                                     <ul class="menu-overflow">
                                         <li><a href="<?=BASE_URL;?>">Beranda</a></li>
-                                        <li class="active"><a href="<?=BASE_URL?>/tentang">Tentang Kami </a></li>
-                                        <li><a href="<?=BASE_URL?>/produk">Produk</a></li>
-                                        <li><a href="<?=BASE_URL?>/login">Login</a></li>
+                                        <li class="active"><a href="<?=BASE_URL?>/Tentang">Tentang Kami </a></li>
+                                        <li><a href="<?=BASE_URL?>/Produk">Produk</a></li>
+                                        <li><a href="<?=BASE_URL?>/Login">Login</a></li>
 
                                     </ul>
                                 </nav>
@@ -173,7 +173,7 @@
                                         <span>Qty: <?=$product["qty"]?></span>
                                     </div>
                                     <div class="shopping-cart-delete">
-                                        <a href="<?=BASE_URL?>/cart/delete/<?=$product["product_id"]?>" onclick="return confirm('Apakah anda yakin?')">
+                                        <a href="<?=BASE_URL?>/Cart/delete/<?=$product["product_id"]?>" onclick="return confirm('Apakah anda yakin?')">
                                             <i class="icofont icofont-ui-delete"></i>
                                         </a>
                                     </div>
