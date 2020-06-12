@@ -153,11 +153,16 @@ class AdminPage extends Controller{
             Flasher::setFlash('warning','Stok Produk telah dihapus','');
             header("Location: ".BASE_URL."/AdminPage/Edit");
             exit;
+        } else {
+            header("Location: ".BASE_URL."/AdminPage/Edit");
+            exit;
         }
     }
 
     public function ubahStatusorder($id,$status){
         if($this->model("Order_model")->ubahStatus($id,$status) > 0){
+            header("Location: ".BASE_URL."/adminpage/laporanpenjualan");
+        } else {
             header("Location: ".BASE_URL."/adminpage/laporanpenjualan");
         }
     }
